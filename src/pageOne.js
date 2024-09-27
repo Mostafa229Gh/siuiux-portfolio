@@ -1,6 +1,6 @@
-import './pageOne.css'; 
+import './PageOne.css'; 
 import React from 'react';
-export default function pageOne(){
+export default function PageOne(){
     return(
         <div className='container'>
 
