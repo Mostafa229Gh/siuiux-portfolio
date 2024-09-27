@@ -1,10 +1,25 @@
-import './App.css';
-import React from 'react';
-import PageOne from './PageOne';
+import "./App.css";
+import React from "react";
+import logo from "./asset/siuinx.svg";
+import PageOne from "./PageOne";
+
 function App() {
   return (
     <div className="App">
-      <PageOne/>
+      <header>
+        <div className="webName">
+          <img id="logo" src={logo} alt="Logo" />
+          <span>Sina Davari</span>
+        </div>
+        <div className="headerOption">
+          <span>Work</span>
+          <span>About me</span>
+          <span>Resume</span>
+          <span>Contact</span>
+        </div>
+      </header>
+
+      <PageOne />
     </div>
   );
 }
