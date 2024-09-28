@@ -23,14 +23,15 @@
 }
 
 header {
-  width: 1248;
+  width: 100vw;
   height: 68px;
   position: fixed;
   top: 24px;
-  left: 144px;
-  right: 144px;
+  
+  
   display: flex;
   align-items: center;
+  flex-direction: row;
   gap: 650px;
 }
 .webName {
