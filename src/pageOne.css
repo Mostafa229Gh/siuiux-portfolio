@@ -6,9 +6,11 @@
 
 .container {
   background: rgb(223, 223, 223);
-  background: linear-gradient(210deg,
-      rgba(223, 223, 223, 1) 0%,
-      rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(
+    210deg,
+    rgba(223, 223, 223, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,60 +20,57 @@
 
 .hand {
   position: absolute;
-  width: 110px;
-  top: 115px;
-  left: 26vw;
+  width: 6.88rem;
+  top: 15vh;
+  left: 27.5vw;
 }
 
 .title {
   display: flex;
-  gap: 17px;
+  gap: 1.18vw;
   align-items: center;
 }
 
 h1 {
   font-family: "Noto Serif";
   font-weight: 400;
-  font-size: 64px;
-  line-height: 87.17px;
+  font-size: clamp(2.5rem, 4.44vw, 5rem);
+  line-height: 6.05vw;
 }
 
 #sinaDavir {
   font-family: "Playwrite HR";
   font-weight: 400;
-  font-size: 58px;
-  line-height: 96.22px;
+  font-size: clamp(2rem, 4.03vw, 4.5rem);
+  line-height: 6.68vw;
 }
 
 .line {
+  margin-right: auto;
+  margin-left: auto;
   background: #fca311;
   border-radius: 4px;
   width: 800px;
   height: 4px;
 }
 
-.under {
-  position: absolute;
-  top: 96px;
-}
-
 .expertise-container {
   position: relative;
-  height: 100px;
+  height: clamp(65px, 6.96vw, 150px);
   overflow: hidden;
 }
 
 .expertise-wrapper {
   position: relative;
-  width: 800.01px;
-  height: 87px;
+  width: 55.56vw;
+  height: 6.04vw;
 }
 
 .expertise {
   width: 800.01px;
   height: 87px;
   position: absolute;
-  padding: 0 0 20px 0;
+  padding: 0 0 1.2vw 0;
   top: 0;
   left: 0;
   opacity: 0;
@@ -87,10 +86,11 @@ h1 {
 }
 
 p {
-  position: relative;
-  top: 25vh;
+  position: absolute;
+  bottom: 20px;
+  left: calc(50vw - 8.2vw);
   font-family: "Noto Serif";
-  font-size: 24px;
+  font-size: clamp(16px, 1.67vw, 32px);
   font-weight: 400;
   line-height: 32.69px;
   text-align: center;

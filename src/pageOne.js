@@ -32,7 +32,7 @@ export default function PageOne() {
       </div>
 
       <div className="expertise-container">
-        <div className="line up"></div>
+        <div className="line"></div>
 
         <div className="expertise-wrapper">
           {expertiseList.map((item, index) => (
@@ -45,7 +45,7 @@ export default function PageOne() {
           ))}
         </div>
 
-        <div className="line under"></div>
+        <div className="line"></div>
       </div>
 
       <h1>Designer</h1>
