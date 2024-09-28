@@ -1,13 +1,28 @@
-.container{
-    background: rgb(223, 223, 223);
-  background: linear-gradient(
-    210deg,
-    rgba(223, 223, 223, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
+.container {
+    background: linear-gradient(252.21deg ,#FFFFFF 100.34% , #DFDFDF 0%);
+
+    /* background: linear-gradient(210deg,
+            rgba(223, 223, 223, 1) 0%,
+            rgba(255, 255, 255, 1) 100%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+.Explore{
+    
+    
+    width: 80vw;
+    height: 20vh;
+    display: flex;
+    font-display: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
+}
+.header{
+    font-size: 4rem;
+    font-family: "Noto Serif";
 }
