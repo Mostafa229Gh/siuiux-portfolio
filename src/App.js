@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import logo from "./asset/siuinx.svg";
 import PageOne from "./PageOne";
+import PageTwo from "./PageTwo";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       </header>
 
       <PageOne />
+      <PageTwo />
     </div>
   );
 }
