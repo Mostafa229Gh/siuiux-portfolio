@@ -6,6 +6,7 @@ import PageTwo from "./PageTwo";
 
 function App() {
   
+  const homeRef = useRef(null);
   const workRef = useRef(null);
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <div className="webName">
+        <div className="webName" onClick={() => scrollToSection(homeRef)}>
           <img id="logo" src={logo} alt="Logo" />
           <span>Sina Davari</span>
         </div>
@@ -26,7 +27,9 @@ function App() {
         </div>
       </header>
 
-      <PageOne />
+      <section ref={homeRef}>
+        <PageOne />
+      </section>
 
       <section ref={workRef}>
         <PageTwo />
