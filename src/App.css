@@ -15,7 +15,7 @@
 
 .App {
   font-family: Noto Serif;
-  font-size: clamp(14px,1.39vw,23px);
+  font-size: clamp(14px, 1.39vw, 23px);
   line-height: 1.89vw;
   text-align: center;
   width: 100%;
@@ -48,6 +48,7 @@ header {
 }
 
 .headerOption {
+  color: #1e1e1e;
   font-weight: 400;
   text-align: center;
   display: flex;
