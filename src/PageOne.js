@@ -49,7 +49,7 @@ export default function PageOne() {
       </div>
 
       <h1>Designer</h1>
-      <div>
+      <div className="pageOneBottom">
         <svg
           width="100%"
           height="100"
