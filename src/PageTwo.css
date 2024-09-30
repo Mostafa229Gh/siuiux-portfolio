@@ -34,29 +34,36 @@
   height: 100px;
   color: #f6f6f6;
   background-color: #1e1e1e;
-  padding: 6px 6px 6px 21px;
+  padding: 6px 6px 6px 6px;
   border-radius: 16px;
 }
 .expAllButton > p {
+  margin-left: 15px;
   font-family: "Roboto";
   font-weight: 600;
   font-size: 1.39vw;
   line-height: 1.94vw;
   text-align: center;
-  transition: opacity 300ms ease-in;
 }
 
 .arrowButton {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: #1e1e1e;
   background-color: #f6f6f6;
   width: 3.33vw;
   height: 3.33vw;
-  padding: 11.5px 12px 11.5px 11px;
   border-radius: 12px;
 }
 
+.expAllButton:hover {
+  justify-content: right;
+}
 .expAllButton:hover p {
-  opacity: 0;
+  display: none;
+}
+.expAllButton:hover .arrowButton {
+  width: 14vw;
+  transition: all 300ms linear 
 }
