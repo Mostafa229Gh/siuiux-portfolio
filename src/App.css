@@ -13,6 +13,14 @@
     url("../public/font/NotoSerif-Regular.ttf") format("ttf");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: 100vh;
+}
+
 .App {
   font-family: Noto Serif;
   font-size: clamp(14px, 1.39vw, 23px);
