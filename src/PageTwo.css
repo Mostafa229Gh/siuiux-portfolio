@@ -13,7 +13,7 @@
 }
 .Explore {
   width: 80vw;
-  height: 20vh;
+  height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,4 +59,18 @@
 
 .expAllButton:hover p {
   opacity: 0;
+}
+.circleContainer{
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  background-color: #9b3030;
+ 
+}
+.Circles{
+  position: absolute;
+  height: 65vh;
+  width: 10vw;
+  top: 125vh;
+  margin-left: 30vw;
 }

@@ -1,7 +1,11 @@
 import "./PageTwo.css";
-// import circles from './asset/circles.png';
-
+import circles from './asset/circles.png';
+import React from "react";
 export default function PageTwo() {
+    let componentArray = [
+        <div key="example-key-1" className="Sample1" >First Sample</div>,
+        <div key="example-key-2" className="Sample2" >Second Sample</div>,
+        ];
   return (
     <div className="container">
       <div className="Explore">
@@ -25,6 +29,14 @@ export default function PageTwo() {
             </svg>
           </div>
         </div>
+      </div>
+      <div className="cards">
+       <div className="eachCard">
+        {componentArray}
+       </div>
+      </div>
+      <div className="circlesContainer">
+            <img src={circles} className="Circles"/>
       </div>
     </div>
   );
