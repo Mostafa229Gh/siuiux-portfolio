@@ -20,6 +20,7 @@ export default function PageTwo() {
               strokeWidth={1.5}
               stroke="currentColor"
               className="size-6"
+              width="25px"
             >
               <path
                 strokeLinecap="round"
