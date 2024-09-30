@@ -35,6 +35,7 @@ header {
   gap: 38vw;
 }
 .webName {
+  color: #1e1e1e;
   display: flex;
   align-items: center;
   gap: 1.1vw;
