@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import logo from "./asset/siuinx.svg";
 import PageOne from "./PageOne";
 import PageTwo from "./PageTwo";
-import PageThree from "./PageThree";
+// import PageThree from "./PageThree";
 
 function App() {
   const homeRef = useRef(null);
@@ -20,7 +20,7 @@ function App() {
       item.style.color = "#1e1e1e";
     });
 
-    if (ref != homeRef) {
+    if (ref !== homeRef) {
       event.target.style.fontWeight = "bold";
       event.target.style.color = "#fca311";
     }
@@ -49,9 +49,9 @@ function App() {
         <PageTwo />
       </section>
 
-      <section ref={aboutMeRef}>
+      {/* <section ref={aboutMeRef}>
         <PageThree />
-      </section>
+      </section> */}
 
     </div>
   );
