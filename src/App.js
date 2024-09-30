@@ -9,7 +9,6 @@ function App() {
   const homeRef = useRef(null);
   const workRef = useRef(null);
   const aboutMeRef = useRef(null);
-  const resumeRef = useRef(null);
   const contactRef = useRef(null);
 
   const [activeSection, setActiveSection] = useState("home");
@@ -33,7 +32,6 @@ function App() {
       { ref: homeRef, id: "home" },
       { ref: workRef, id: "work" },
       { ref: aboutMeRef, id: "aboutMe" },
-      { ref: resumeRef, id: "resume" },
       { ref: contactRef, id: "contact" },
     ];
 
@@ -98,8 +96,8 @@ function App() {
           <span data-section="aboutMe" onClick={(e) => scrollToSection(aboutMeRef, e)} >
             About me
           </span>
-          <span data-section="resume" onClick={(e) => scrollToSection(resumeRef, e)} >
-            Resume
+          <span>
+            <a className="downloadResume" href="" >Resume</a>
           </span>
           <span data-section="contact" onClick={(e) => scrollToSection(contactRef, e)} >
             Contact

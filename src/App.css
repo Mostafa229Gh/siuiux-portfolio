@@ -67,3 +67,8 @@ header {
 .headerOption > span {
   cursor: pointer;
 }
+
+.downloadResume {
+  color: inherit;
+  text-decoration: none;
+}
