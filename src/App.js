@@ -4,6 +4,7 @@ import logo from "./asset/siuinx.svg";
 import PageOne from "./PageOne";
 import PageTwo from "./PageTwo";
 import PageThree from "./PageThree";
+import PageFour from "./PageFour";
 
 function App() {
   const homeRef = useRef(null);
@@ -117,6 +118,9 @@ function App() {
         <PageThree />
       </section>
       
+      <section ref={contactRef}>
+        <PageFour />
+      </section>
     </div>
   );
 }
