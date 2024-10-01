@@ -83,6 +83,25 @@ function App() {
     }
   }, [activeSection]);
 
+  //----one wheel to go next section
+  // let currentSection = 0;
+  // const sections = document.querySelectorAll("section");
+  // const totalSections = sections.length;
+
+  // window.addEventListener("wheel", function (event) {
+  //   if (event.deltaY > 0) {
+  //     if (currentSection < totalSections - 1) {
+  //       currentSection++;
+  //       sections[currentSection].scrollIntoView({ behavior: "smooth" });
+  //     }
+  //   } else {
+  //     if (currentSection > 0) {
+  //       currentSection--;
+  //       sections[currentSection].scrollIntoView({ behavior: "smooth" });
+  //     }
+  //   }
+  // });
+  //--------------------
   return (
     <div className="App">
       <header>
@@ -91,16 +110,18 @@ function App() {
           <span>Sina Davari</span>
         </div>
         <div className="headerOption">
-          <span data-section="work" onClick={(e) => scrollToSection(workRef, e)} >
+          <span data-section="work" onClick={(e) => scrollToSection(workRef, e)}>
             Work
           </span>
-          <span data-section="aboutMe" onClick={(e) => scrollToSection(aboutMeRef, e)} >
+          <span data-section="aboutMe" onClick={(e) => scrollToSection(aboutMeRef, e)}>
             About me
           </span>
           <span>
-            <a className="downloadResume" href="" >Resume</a>
+            <a className="downloadResume" href="#">
+              Resume
+            </a>
           </span>
-          <span data-section="contact" onClick={(e) => scrollToSection(contactRef, e)} >
+          <span data-section="contact" onClick={(e) => scrollToSection(contactRef, e)}>
             Contact
           </span>
         </div>
@@ -117,7 +138,7 @@ function App() {
       <section ref={aboutMeRef}>
         <PageThree />
       </section>
-      
+
       <section ref={contactRef}>
         <PageFour />
       </section>

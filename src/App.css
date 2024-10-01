@@ -13,8 +13,9 @@
     url("../public/font/NotoSerif-Regular.ttf") format("ttf");
 }
 
-html {
+body, html {
   scroll-behavior: smooth;
+  /* overflow: hidden; */
 }
 
 section {
