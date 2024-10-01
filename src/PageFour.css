@@ -1,0 +1,40 @@
+.containerFour {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+  height: 100vh;
+}
+
+.contactMeText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Noto Serif";
+  font-size: 3.33vw;
+  font-weight: 400;
+  line-height: 4.54vw;
+
+  width: 27.78vw;
+  height: 27.78vw;
+
+  position: relative;
+  left: calc(-50% + 27.78vw);
+
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  background: linear-gradient(
+    0deg,
+    rgba(3, 169, 244, 0.25) 0%,
+    rgba(204, 57, 164, 0.25) 50%,
+    rgba(255, 181, 210, 0.25) 100%
+  );
+  box-shadow: 0px 0px 8px 2px #ffffff inset;
+}
+#deskImg {
+  width: 52vw;
+  position: absolute;
+  top: calc(400vh - 73.33vh);
+  left: calc(100vw - 54vw);
+}
