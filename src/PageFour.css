@@ -153,7 +153,7 @@
 #deskImg {
   width: 52vw;
   position: absolute;
-  top: calc(400vh - 73.33vh);
+  top: calc(400vh - 34.79vw);
   left: calc(100vw - 54vw);
 }
 
