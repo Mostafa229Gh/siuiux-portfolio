@@ -21,7 +21,7 @@
   position: relative;
   left: calc(-50% + 27.78vw);
 
-  transition: padding 10ms cubic-bezier(0, 0, 0.01, 1) 100ms;
+  transition: padding 10ms cubic-bezier(0, 0, 0.01, 1);
 }
 .contactMeText > p {
   position: relative;
@@ -31,7 +31,7 @@
   line-height: 4.54vw;
   z-index: 3;
 
-  transition: transform 800ms cubic-bezier(0, 0, 0.01, 1) 100ms;
+  transition: transform 800ms cubic-bezier(0, 0, 0.01, 1);
 }
 .contactMeText > div {
   position: absolute;

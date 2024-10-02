@@ -1,5 +1,4 @@
 import "./PageFour.css";
-import React from "react";
 import deskImg from "./asset/contact.png";
 import arrow from "./asset/arrow.png";
 
