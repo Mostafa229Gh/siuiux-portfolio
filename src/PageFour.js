@@ -115,7 +115,7 @@ export default function PageFour() {
                   </filter>
                 </defs>
               </svg>
-              <p className="socialTitle">Email Page</p>
+              <p className="socialTitle">Email</p>
               <p className="socialText">siuiux.2020@gmail.com</p>
             </a>
             <a href="tel:+09392057344" className="phone">
@@ -173,7 +173,7 @@ export default function PageFour() {
                 </defs>
               </svg>
               <p className="socialTitle">Phone Number</p>
-              <p className="socialText">09392057344</p>
+              <p className="socialText">+(98)9392057344</p>
             </a>
             <a href="https://t.me/siuiux" className="telegram" target="_blank" rel="noopener noreferrer">
               <svg
