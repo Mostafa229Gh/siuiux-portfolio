@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Mali";
+  src: local("Mali"), url("../public/font/Mali-Italic.ttf") format("ttf");
+}
+
 .containerFour {
   display: flex;
   justify-content: center;
@@ -46,8 +51,62 @@
 
   transition: opacity 300ms linear 100ms;
 }
-.contactMeText:hover > div {
+.contactMeSocials {
   opacity: 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 0fr);
+  grid-template-rows: repeat(2, 0fr);
+  gap: 0px;
+  padding-top: 1.39vw;
+  z-index: 1;
+  transition: all 300ms cubic-bezier(0, 0, 0.01, 1);
+}
+.contactMeSocials > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+
+  width: 12.5vw;
+  height: 12.5vw;
+  border-radius: 20px;
+  background: #d9d9d940;
+  border: 2px solid #767676;
+  backdrop-filter: blur(12px);
+  transition: all 300ms cubic-bezier(0, 0, 0.01, 1);
+}
+.contactMeSocials > a > svg {
+  transition: all 300ms cubic-bezier(0, 0, 0.01, 1);
+}
+.socialTitle {
+  display: none;
+  color: #FFFFFF;
+  font-family: "Roboto";
+  font-size: 1.39vw;
+  font-weight: 700;
+  line-height: 1.67vw;
+  text-align: left;
+  margin-bottom: 0.67vw;
+  transition: all 300ms cubic-bezier(0, 0, 0.01, 1);
+}
+.socialText {
+  display: none;
+  color: #FFFFFF;
+  font-family: "Roboto";
+  font-size: 1vw;
+  font-weight: 200;
+  line-height: 1.67vw;
+  text-align: left;
+  transition: all 300ms cubic-bezier(0, 0, 0.01, 1);
+}
+
+.contactMeText:hover > div {
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
 }
 .contactMeText:hover > p {
   transform: translateY(calc(50% - 18vw));
@@ -55,35 +114,40 @@
 .contactMeText:hover {
   padding: 0;
 }
-
-.contactMeSocials {
-  opacity: 0;
-  gap: 0px;
-  display: grid;
-  grid-template-columns: repeat(2, 0fr);
-  grid-template-rows: repeat(2, 0fr);
-  width: 25vw;
-  height: 25vw;
-  position: absolute;
-  left: calc(50% - 34.2vw);
-  z-index: 1;
-  transition: all 300ms ease 300ms;
-}
-.contactMeSocials > a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 12.5vw;
-  height: 12.5vw;
-  border-radius: 20px;
-  background: #d9d9d940;
-  border: 2px solid #767676;
-  backdrop-filter: blur(12px);
-  transition: all 300ms ease 320ms;
-}
-.contactMeText:hover + .contactMeSocials {
-  gap: 10px;
+.contactMeText:hover .contactMeSocials {
+  gap: 8px;
   opacity: 1;
+}
+.contactMeSocials > a:hover > svg {
+  fill: #ffffff;
+  transform: scale(0.6);
+}
+.contactMeSocials > a:hover > .socialText {
+  display: block;
+}
+.contactMeSocials > a:hover > .socialTitle {
+  display: block;
+}
+.instagram:hover {
+  background: linear-gradient(
+    240.21deg,
+    #6228d7 12.2%,
+    #ee2a7b 54.41%,
+    #f9ce34 96.63%
+  );
+  border: none;
+}
+.gmail:hover {
+  background: linear-gradient(47.37deg, #536976 0%, #bbd2c5 151.26%);
+  border: none;
+}
+.phone:hover {
+  background: linear-gradient(228.88deg, #ffffff -79.66%, #000000 96.27%);
+  border: none;
+}
+.telegram:hover {
+  background: linear-gradient(227.55deg, #ffffff -35.96%, #1c92d2 96.18%);
+  border: none;
 }
 
 #deskImg {
@@ -91,4 +155,24 @@
   position: absolute;
   top: calc(400vh - 73.33vh);
   left: calc(100vw - 54vw);
+}
+
+.HoverClick {
+  position: absolute;
+  top: calc(400vh - 73vh);
+  left: calc(100vw - 40vw);
+  font-family: "Mali";
+  font-size: 1.39vw;
+  font-weight: 300;
+  line-height: 1.81vw;
+  text-align: center;
+}
+
+#arrow {
+  width: 24.12vw;
+  height: 6.01vw;
+  transform: scale(0.7) rotate(330deg);
+  position: absolute;
+  top: calc(400vh - 70vh);
+  left: calc(100vw - 60vw);
 }
