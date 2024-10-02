@@ -117,7 +117,7 @@ function App() {
             About me
           </span>
           <span>
-            <a className="downloadResume" href="#">
+            <a className="downloadResume" href="https://github.com/Mostafa229Gh">
               Resume
             </a>
           </span>

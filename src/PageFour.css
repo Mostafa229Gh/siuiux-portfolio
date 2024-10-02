@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding:0 78px 0 78px;
+  padding: 0 78px 0 78px;
   width: 27.78vw;
   height: 27.78vw;
   position: relative;
@@ -24,8 +24,8 @@
   font-size: 3.33vw;
   font-weight: 400;
   line-height: 4.54vw;
-  z-index: 2;
-  
+  z-index: 3;
+
   transition: transform 800ms cubic-bezier(0, 0, 0.01, 1) 100ms;
 }
 .contactMeText > div {
@@ -42,7 +42,7 @@
     rgba(255, 181, 210, 0.25) 100%
   );
   box-shadow: 0px 0px 8px 2px #ffffff inset;
-  z-index: 1;
+  z-index: 2;
 
   transition: opacity 300ms linear 100ms;
 }
@@ -54,6 +54,29 @@
 }
 .contactMeText:hover {
   padding: 0;
+}
+
+.contactMeSocials {
+  /* opacity: 0; */
+  display: grid;
+  grid-template-columns: repeat(2, 0fr);
+  grid-template-rows: repeat(2, 0fr);
+  width: 25vw;
+  height: 25vw;
+  position: absolute;
+  left: calc(50% - 34.2vw);
+  z-index: 1;
+}
+.contactMeSocials > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12.5vw;
+  height: 12.5vw;
+  border-radius: 20px;
+  background: #d9d9d940;
+  border: 2px solid #767676;
+  backdrop-filter: blur(12px);
 }
 
 #deskImg {
