@@ -12,8 +12,26 @@
   src: local("Noto Serif"),
     url("../public/font/NotoSerif-Regular.ttf") format("ttf");
 }
+@font-face {
+  font-family: "Playwrite HR";
+  src: local("Playwrite HR"),
+    url("../public/font/PlaywriteHR-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url("../public/font/Roboto-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Mali";
+  src: local("Mali"), url("../public/font/Mali-Italic.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url("../public/font/Rubik-Regular.ttf") format("ttf");
+}
 
-body, html {
+body,
+html {
   scroll-behavior: smooth;
   /* overflow: hidden; */
 }

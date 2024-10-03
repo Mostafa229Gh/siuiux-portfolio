@@ -1,9 +1,3 @@
-@font-face {
-  font-family: "Playwrite HR";
-  src: local("Playwrite HR"),
-    url("../public/font/PlaywriteHR-Regular.ttf") format("ttf");
-}
-
 .container {
   background: linear-gradient(252.21deg, #DFDFDF 0%, #FFFFFF 100.34%);
   display: flex;

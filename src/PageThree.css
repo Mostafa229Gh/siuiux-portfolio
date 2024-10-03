@@ -1,0 +1,76 @@
+.containerThree {
+  background: linear-gradient(
+    76.52deg,
+    #161616 0%,
+    #1c1c1c 26.6%,
+    #010101 55.63%,
+    #050505 81.85%,
+    #303030 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+  color: #ffffff;
+  gap: 6.81vw;
+}
+
+.aboutMeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4vw;
+  width: 36vw;
+  opacity: 0.8;
+}
+.aboutMeSection > h2 {
+  font-family: "Noto Serif";
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 4.54vw;
+}
+.aboutMeSection > p {
+  font-family: "Rubik";
+  font-size: 1.1vw;
+  font-weight: 400;
+  line-height: 2.3vw;
+  text-align: justify;
+  direction: ltr;
+}
+.resumeBotton {
+  display: flex;
+  align-items: center;
+  width: 17.78vw;
+  height: 4.44vw;
+  padding-left: 1vw;
+  border-radius: 8px;
+  background: #26262680;
+  border: 1px solid #767676;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+.resumeBotton > p {
+  font-family: "Roboto";
+  font-size: 1.39vw;
+  font-weight: 400;
+  line-height: 1.67vw;
+  text-align: left;
+}
+#lineImg {
+  width: 5.9vw;
+  position: relative;
+  right: 4vw;
+}
+.aboutMeRightSide > p {
+  color: #bababa;
+  font-family: "Noto Serif";
+  font-size: 2vw;
+  font-weight: 400;
+  line-height: 3.03vw;
+  text-align: left;
+  position: relative;
+  top: 2vw;
+}
+#sinaImg {
+  width: 22vw;
+}

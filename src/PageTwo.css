@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Roboto";
-  src: local("Roboto"), url("../public/font/Roboto-Regular.ttf") format("ttf");
-}
-
 .containerTwo {
   background: linear-gradient(288deg, #DFDFDF 0%, #FFFFFF 100.34%);
   display: flex;
