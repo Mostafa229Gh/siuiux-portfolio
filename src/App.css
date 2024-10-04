@@ -12,9 +12,28 @@
   src: local("Noto Serif"),
     url("../public/font/NotoSerif-Regular.ttf") format("ttf");
 }
+@font-face {
+  font-family: "Playwrite HR";
+  src: local("Playwrite HR"),
+    url("../public/font/PlaywriteHR-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url("../public/font/Roboto-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Mali";
+  src: local("Mali"), url("../public/font/Mali-Italic.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url("../public/font/Rubik-Regular.ttf") format("ttf");
+}
 
+body,
 html {
   scroll-behavior: smooth;
+  /* overflow: hidden; */
 }
 
 section {
@@ -31,6 +50,7 @@ section {
 }
 
 header {
+  color: #1e1e1e;
   width: 80vw;
   height: 7.56vh;
   position: fixed;
@@ -43,7 +63,6 @@ header {
   gap: 38vw;
 }
 .webName {
-  color: #1e1e1e;
   display: flex;
   align-items: center;
   gap: 1.1vw;
@@ -57,7 +76,6 @@ header {
 }
 
 .headerOption {
-  color: #1e1e1e;
   font-weight: 400;
   text-align: center;
   display: flex;

@@ -7,7 +7,7 @@ export default function PageTwo() {
         <div key="example-key-2" className="Sample2" >Second Sample</div>,
         ];
   return (
-    <div className="container">
+    <div className="containerTwo">
       <div className="Explore">
         <h1 className="header">Explore my projects</h1>
         <div className="expAllButton">

@@ -1,0 +1,129 @@
+.containerThree {
+  background: linear-gradient(
+    76.52deg,
+    #161616 0%,
+    #1c1c1c 26.6%,
+    #010101 55.63%,
+    #050505 81.85%,
+    #303030 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+  color: #ffffff;
+  gap: 6.81vw;
+}
+
+.aboutMeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2vw;
+  width: 36vw;
+  opacity: 0.8;
+}
+.aboutMeSection > h2 {
+  font-family: "Noto Serif";
+  font-size: 2.5vw;
+  font-weight: 400;
+  line-height: 4.54vw;
+}
+.aboutMeSection > p {
+  font-family: "Rubik";
+  font-size: 1vw;
+  font-weight: 400;
+  line-height: 2.3vw;
+  text-align: justify;
+  direction: ltr;
+  margin-bottom: 2vw;
+}
+.aboutMeSection > a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.resumeBotton {
+  display: flex;
+  align-items: center;
+  width: 17.78vw;
+  height: 4.44vw;
+  padding-left: 1vw;
+  border-radius: 8px;
+  background: #26262680;
+  border: 1px solid #767676;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+.resumeText {
+  display: flex;
+  flex-direction: column;
+}
+.resumeText > p {
+  font-family: "Roboto";
+  font-size: 1.39vw;
+  font-weight: 400;
+  line-height: 1.67vw;
+  text-align: left;
+  transition: font-weight 500ms linear;
+}
+.resumeText > span {
+  width: 5vw;
+  height: 0px;
+  border: 1px;
+  border: 1px solid #ffffff;
+  transition: transform 800ms cubic-bezier(0, 0, 0.01, 1);
+}
+.circles {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 100%;
+  filter: blur(9px);
+  transition: all 800ms cubic-bezier(0, 0, 0.01, 1);
+}
+.Purple {
+  background: #9747ff;
+  left: 8.2vw;
+  bottom: 0.5vw;
+}
+.Yellow {
+  background: #ff9f2e;
+  left: 3vw;
+  bottom: -0.3vw;
+}
+
+.resumeBotton:hover > .resumeText > span {
+  transform: translateY(0.2vw);
+}
+.resumeBotton:hover > .resumeText > p {
+  font-weight: bold;
+}
+.resumeBotton:hover .Purple {
+  left: 4vw;
+  bottom: 0.5vw;
+}
+.resumeBotton:hover .Yellow {
+  left: 4.9vw;
+  bottom: -0.4vw;
+}
+.resumeBotton:hover .Red {
+  background: #df4245;
+}
+
+#lineImg {
+  width: 5.9vw;
+}
+
+.aboutMeRightSide > p {
+  color: #bababa;
+  font-family: "Noto Serif";
+  font-size: 2vw;
+  font-weight: 400;
+  line-height: 3.03vw;
+  text-align: left;
+  position: relative;
+  top: 2vw;
+}
+#sinaImg {
+  width: 19vw;
+}
