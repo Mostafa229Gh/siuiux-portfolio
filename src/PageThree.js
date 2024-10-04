@@ -18,11 +18,21 @@ export default function PageThree() {
           world more beautiful, simple and lovely through my designs. I look
           forward to working with you to create unforgettable experiences
         </p>
-        <div className="resumeBotton">
-          <p>Resume</p>
-        </div>
+        <a href="http://localhost:3000">
+          <div className="resumeBotton">
+            <div className="resumeText">
+              <p>Resume</p>
+              <span></span>
+            </div>
+            <div className="circles Purple"></div>
+            <div className="circles Yellow"></div>
+            <div className="circles Red"></div>
+          </div>
+        </a>
       </div>
+
       <img id="lineImg" src={lineImg} alt="line" />
+
       <div className="aboutMeRightSide">
         <img id="sinaImg" src={sinaImg} alt="sina" />
         <p>Take the risk or lose the chance</p>

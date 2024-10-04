@@ -19,23 +19,28 @@
 .aboutMeSection {
   display: flex;
   flex-direction: column;
-  gap: 2.4vw;
+  gap: 1.2vw;
   width: 36vw;
   opacity: 0.8;
 }
 .aboutMeSection > h2 {
   font-family: "Noto Serif";
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-weight: 400;
   line-height: 4.54vw;
 }
 .aboutMeSection > p {
   font-family: "Rubik";
-  font-size: 1.1vw;
+  font-size: 1vw;
   font-weight: 400;
   line-height: 2.3vw;
   text-align: justify;
   direction: ltr;
+  margin-bottom: 2vw;
+}
+.aboutMeSection > a {
+  color: #ffffff;
+  text-decoration: none;
 }
 .resumeBotton {
   display: flex;
@@ -49,18 +54,66 @@
   backdrop-filter: blur(8px);
   cursor: pointer;
 }
-.resumeBotton > p {
+.resumeText {
+  display: flex;
+  flex-direction: column;
+}
+.resumeText > p {
   font-family: "Roboto";
   font-size: 1.39vw;
   font-weight: 400;
   line-height: 1.67vw;
   text-align: left;
+  transition: font-weight 500ms linear;
 }
+.resumeText > span {
+  width: 5vw;
+  height: 0px;
+  border: 1px;
+  border: 1px solid #ffffff;
+  transition: transform 800ms cubic-bezier(0, 0, 0.01, 1);
+}
+.circles {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 100%;
+  filter: blur(9px);
+  transition: all 800ms cubic-bezier(0, 0, 0.01, 1);
+}
+.Purple {
+  background: #9747ff;
+  left: 8.2vw;
+  bottom: 0.5vw;
+}
+.Yellow {
+  background: #ff9f2e;
+  left: 3vw;
+  bottom: -0.3vw;
+}
+
+.resumeBotton:hover > .resumeText > span {
+  transform: translateY(0.2vw);
+}
+.resumeBotton:hover > .resumeText > p {
+  font-weight: bold;
+}
+.resumeBotton:hover .Purple {
+  left: 4vw;
+  bottom: 0.5vw;
+}
+.resumeBotton:hover .Yellow {
+  left: 4.9vw;
+  bottom: -0.4vw;
+}
+.resumeBotton:hover .Red {
+  background: #df4245;
+}
+
 #lineImg {
   width: 5.9vw;
-  position: relative;
-  right: 4vw;
 }
+
 .aboutMeRightSide > p {
   color: #bababa;
   font-family: "Noto Serif";
@@ -72,5 +125,5 @@
   top: 2vw;
 }
 #sinaImg {
-  width: 22vw;
+  width: 19vw;
 }
