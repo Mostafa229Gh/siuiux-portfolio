@@ -14,17 +14,25 @@ function App() {
   
   const [activeSection, setActiveSection] = useState("home");
   
-  const scrollToSection = (ref, event) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
-  
+  const resetHeaderStyles = () => {
     document.querySelectorAll(".headerOption span").forEach((item) => {
       item.style.fontWeight = "normal";
       item.style.color = "#1e1e1e";
     });
+  };
   
+  const applyActiveStyles = (element, color = "#fca311", fontWeight = "bold") => {
+    if (element) {
+      element.style.fontWeight = fontWeight;
+      element.style.color = color;
+    }
+  };
+  
+  const scrollToSection = (ref, event) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+    resetHeaderStyles();
     if (ref !== homeRef) {
-      event.target.style.fontWeight = "bold";
-      event.target.style.color = "#fca311";
+      applyActiveStyles(event.target);
     }
   };
   
@@ -68,40 +76,26 @@ function App() {
   }, []);
   
   useEffect(() => {
-    document.querySelectorAll(".headerOption span").forEach((item) => {
-      item.style.fontWeight = "normal";
-      item.style.color = "#1e1e1e";
-    });
+    resetHeaderStyles();
   
     const activeElement = document.querySelector(
       `.headerOption span[data-section="${activeSection}"]`
     );
   
-    // Style for "About Me" section
+    const webNameText = document.querySelector(".webName span");
+    const logo = document.getElementById("logo");
+  
     if (activeSection === "aboutMe") {
       document.querySelectorAll(".headerOption span").forEach((item) => {
         item.style.color = "#ffffff";
       });
-      
-      if (activeElement) {
-        activeElement.style.color = "#fca311";
-        activeElement.style.fontWeight = "bold";
-      }
-      
-      const webNameText = document.querySelector(".webName span");
-      const logo = document.getElementById("logo");
+      applyActiveStyles(activeElement);
       if (webNameText && logo) {
         webNameText.style.color = "#ffffff";
         logo.style.filter = "invert(1)";
       }
     } else {
-      if (activeElement) {
-        activeElement.style.fontWeight = "bold";
-        activeElement.style.color = "#fca311";
-      }
-
-      const webNameText = document.querySelector(".webName span");
-      const logo = document.getElementById("logo");
+      applyActiveStyles(activeElement);
       if (webNameText && logo) {
         webNameText.style.color = "#1e1e1e";
         logo.style.filter = "invert(0)";
@@ -109,25 +103,58 @@ function App() {
     }
   }, [activeSection]);
   
+  //-- Updated wheel navigation logic
+  useEffect(() => {
+    let currentSection = 0;
+    const allSections = document.querySelectorAll("section");
+    const totalSections = allSections.length;
+    let isScrolling = false;
+  
+    function scrollToSectionWheel(index) {
+      if (index >= 0 && index < totalSections) {
+        isScrolling = true;
+        allSections[index].scrollIntoView({ behavior: "smooth" });
+  
+        setTimeout(() => {
+          isScrolling = false;
+        }, 200);
+      }
+    }
+  
+    const handleWheel = (event) => {
+      if (isScrolling) return;
+  
+      if (event.deltaY > 0 && currentSection < totalSections - 1) {
+        currentSection++;
+        scrollToSectionWheel(currentSection);
+      } else if (event.deltaY < 0 && currentSection > 0) {
+        currentSection--;
+        scrollToSectionWheel(currentSection);
+      }
+    };
+  
+    window.addEventListener("wheel", handleWheel);
 
-  //-- one wheel to go next section
-  // let currentSection = 0;
-  // const sections = document.querySelectorAll("section");
-  // const totalSections = sections.length;
-
-  // window.addEventListener("wheel", function (event) {
-  //   if (event.deltaY > 0) {
-  //     if (currentSection < totalSections - 1) {
-  //       currentSection++;
-  //       sections[currentSection].scrollIntoView({ behavior: "smooth" });
-  //     }
-  //   } else {
-  //     if (currentSection > 0) {
-  //       currentSection--;
-  //       sections[currentSection].scrollIntoView({ behavior: "smooth" });
-  //     }
-  //   }
-  // });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            currentSection = Array.from(allSections).indexOf(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+  
+    allSections.forEach((section) => observer.observe(section));
+  
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      allSections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+  
+  
 
   return (
     <div className="App">

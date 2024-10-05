@@ -33,7 +33,7 @@
 body,
 html {
   scroll-behavior: smooth;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 section {
