@@ -103,45 +103,57 @@ function App() {
     }
   }, [activeSection]);
   
-
-  //-- one wheel to go next section
-  let currentSection = 0;
-  const sections = document.querySelectorAll("section");
-  const totalSections = sections.length;
-  let isScrolling = false;
+  //-- Updated wheel navigation logic
+  useEffect(() => {
+    let currentSection = 0;
+    const allSections = document.querySelectorAll("section");
+    const totalSections = allSections.length;
+    let isScrolling = false;
   
-  function scrollToSectionWheel(index) {
-    if (index >= 0 && index < totalSections) {
-      isScrolling = true;
-      sections[index].scrollIntoView({ behavior: "smooth" });
+    function scrollToSectionWheel(index) {
+      if (index >= 0 && index < totalSections) {
+        isScrolling = true;
+        allSections[index].scrollIntoView({ behavior: "smooth" });
   
-      setTimeout(() => {
-        isScrolling = false;
-      }, 1000);
-    }
-  }
-  
-  window.addEventListener("wheel", function (event) {
-    if (isScrolling) return;
-  
-    if (event.deltaY > 0 && currentSection < totalSections - 1) {
-      currentSection++;
-      scrollToSectionWheel(currentSection);
-    } else if (event.deltaY < 0 && currentSection > 0) {
-      currentSection--;
-      scrollToSectionWheel(currentSection);
-    }
-  });
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        currentSection = Array.from(sections).indexOf(entry.target);
+        setTimeout(() => {
+          isScrolling = false;
+        }, 200);
       }
-    });
-  }, { threshold: 0.5 });
+    }
   
-  sections.forEach(section => observer.observe(section));
+    const handleWheel = (event) => {
+      if (isScrolling) return;
+  
+      if (event.deltaY > 0 && currentSection < totalSections - 1) {
+        currentSection++;
+        scrollToSectionWheel(currentSection);
+      } else if (event.deltaY < 0 && currentSection > 0) {
+        currentSection--;
+        scrollToSectionWheel(currentSection);
+      }
+    };
+  
+    window.addEventListener("wheel", handleWheel);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            currentSection = Array.from(allSections).indexOf(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+  
+    allSections.forEach((section) => observer.observe(section));
+  
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      allSections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+  
   
 
   return (
