@@ -127,3 +127,73 @@
 #sinaImg {
   width: 19vw;
 }
+
+@media (max-width: 640px) {
+  .aboutMeSection > h2,
+  #lineImg {
+    display: none;
+  }
+  .containerThree {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  #sinaImg {
+    width: 150px;
+  }
+  .aboutMeRightSide > p {
+    font-size: 20px;
+    line-height: 27.24px;
+    position: relative;
+  }
+
+  .aboutMeSection {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 90vw;
+  }
+  .resumeBotton {
+    width: 232px;
+    height: 50px;
+    padding-left: 15px;
+  }
+  .resumeText > p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .resumeText > span {
+    width: 60px;
+    height: 0px;
+  }
+  .circles {
+    width: 36px;
+    height: 36px;
+  }
+  .Purple {
+    top: -5px;
+    left: 110px;
+  }
+  .Yellow {
+    top: 2px;
+    left: 40px;
+  }
+  .aboutMeSection > p {
+    font-size: 11px;
+    line-height: 19px;
+    margin-bottom: 0;
+    transform: translateY(20px);
+  }
+
+  .resumeBotton:hover .Purple {
+    top: -5px;
+    left: 120px;
+  }
+  .resumeBotton:hover .Yellow {
+    top: 2px;
+    left: 28px;
+  }
+  .resumeBotton:hover .Red {
+    background: #df4245;
+    left: 20px;
+  }
+}
