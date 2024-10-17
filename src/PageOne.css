@@ -1,5 +1,5 @@
 .container {
-  background: linear-gradient(252.21deg, #DFDFDF 0%, #FFFFFF 100.34%);
+  background: linear-gradient(252.21deg, #dfdfdf 0%, #ffffff 100.34%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,11 @@
   gap: 1.18vw;
   align-items: center;
 }
-
+.title > div {
+  display: flex;
+  align-items: center;
+  gap: 1.18vw;
+}
 h1 {
   color: #1e1e1e;
   font-family: "Noto Serif";
@@ -107,5 +111,45 @@ h1 {
 
   100% {
     transform: translateY(-15px);
+  }
+}
+
+@media (max-width: 640px) {
+  .hand {
+    top: 80px;
+  }
+  .title {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .title > div {
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-size: 36px;
+    line-height: 49.03px;
+  }
+  #sinaDavir {
+    font-size: 24px;
+    line-height: 39.82px;
+    text-align: center;
+  }
+  .line {
+    width: 312px;
+  }
+  .expertise-container {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .expertise-wrapper {
+    width: 100%;
+    height: 56px;
+  }
+  .expertise {
+    width: 100%;
+  }
+  .pageOneBottom > p {
+    left: calc(50% - 75px);
   }
 }

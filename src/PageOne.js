@@ -27,8 +27,11 @@ export default function PageOne() {
         <img src={hand} alt="Hi" />
       </div>
       <div className="title">
-        <h1>Hi there! I am</h1>
-        <h1 id="sinaDavir">Sina Davari</h1>
+        <h1>Hi there!</h1>
+        <div>
+          <h1> I am</h1>
+          <h1 id="sinaDavir">Sina Davari</h1>
+        </div>
       </div>
 
       <div className="expertise-container">
