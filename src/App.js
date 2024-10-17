@@ -5,29 +5,35 @@ import PageOne from "./PageOne";
 import PageTwo from "./PageTwo";
 import PageThree from "./PageThree";
 import PageFour from "./PageFour";
+import Menu from "./Menu";
 
 function App() {
   const homeRef = useRef(null);
   const workRef = useRef(null);
   const aboutMeRef = useRef(null);
   const contactRef = useRef(null);
-  
+
   const [activeSection, setActiveSection] = useState("home");
-  
+  const [menuText, setMenuText] = useState("Home");
+
   const resetHeaderStyles = () => {
     document.querySelectorAll(".headerOption span").forEach((item) => {
       item.style.fontWeight = "normal";
       item.style.color = "#1e1e1e";
     });
   };
-  
-  const applyActiveStyles = (element, color = "#fca311", fontWeight = "bold") => {
+
+  const applyActiveStyles = (
+    element,
+    color = "#fca311",
+    fontWeight = "bold"
+  ) => {
     if (element) {
       element.style.fontWeight = fontWeight;
       element.style.color = color;
     }
   };
-  
+
   const scrollToSection = (ref, event) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
     resetHeaderStyles();
@@ -35,15 +41,15 @@ function App() {
       applyActiveStyles(event.target);
     }
   };
-  
+
   useEffect(() => {
     const sections = [
-      { ref: homeRef, id: "home" },
-      { ref: workRef, id: "work" },
-      { ref: aboutMeRef, id: "aboutMe" },
-      { ref: contactRef, id: "contact" },
+      { ref: homeRef, id: "home", name: "Home" },
+      { ref: workRef, id: "work", name: "Work" },
+      { ref: aboutMeRef, id: "aboutMe", name: "About Me" },
+      { ref: contactRef, id: "contact", name: "Contact" },
     ];
-  
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -53,19 +59,20 @@ function App() {
             );
             if (section) {
               setActiveSection(section.id);
+              setMenuText(section.name);  // Update menu text here
             }
           }
         });
       },
       { threshold: 0.6 }
     );
-  
+
     sections.forEach((section) => {
       if (section.ref.current) {
         observer.observe(section.ref.current);
       }
     });
-  
+
     return () => {
       sections.forEach((section) => {
         if (section.ref.current) {
@@ -74,17 +81,17 @@ function App() {
       });
     };
   }, []);
-  
+
   useEffect(() => {
     resetHeaderStyles();
-  
+
     const activeElement = document.querySelector(
       `.headerOption span[data-section="${activeSection}"]`
     );
-  
+
     const webNameText = document.querySelector(".webName span");
     const logo = document.getElementById("logo");
-  
+
     if (activeSection === "aboutMe") {
       document.querySelectorAll(".headerOption span").forEach((item) => {
         item.style.color = "#ffffff";
@@ -102,28 +109,28 @@ function App() {
       }
     }
   }, [activeSection]);
-  
+
   //-- Updated wheel navigation logic
   useEffect(() => {
     let currentSection = 0;
     const allSections = document.querySelectorAll("section");
     const totalSections = allSections.length;
     let isScrolling = false;
-  
+
     function scrollToSectionWheel(index) {
       if (index >= 0 && index < totalSections) {
         isScrolling = true;
         allSections[index].scrollIntoView({ behavior: "smooth" });
-  
+
         setTimeout(() => {
           isScrolling = false;
         }, 200);
       }
     }
-  
+
     const handleWheel = (event) => {
       if (isScrolling) return;
-  
+
       if (event.deltaY > 0 && currentSection < totalSections - 1) {
         currentSection++;
         scrollToSectionWheel(currentSection);
@@ -132,7 +139,7 @@ function App() {
         scrollToSectionWheel(currentSection);
       }
     };
-  
+
     window.addEventListener("wheel", handleWheel);
 
     const observer = new IntersectionObserver(
@@ -145,16 +152,14 @@ function App() {
       },
       { threshold: 0.5 }
     );
-  
+
     allSections.forEach((section) => observer.observe(section));
-  
+
     return () => {
       window.removeEventListener("wheel", handleWheel);
       allSections.forEach((section) => observer.unobserve(section));
     };
   }, []);
-  
-  
 
   return (
     <div className="App">
@@ -177,10 +182,7 @@ function App() {
             About me
           </span>
           <span>
-            <a
-              className="downloadResume"
-              href="http://localhost:3000"
-            >
+            <a className="downloadResume" href="http://localhost:3000">
               Resume
             </a>
           </span>
@@ -191,8 +193,12 @@ function App() {
             Contact
           </span>
         </div>
+        <div className="Menu">
+          <p>{menuText}</p> {/* Display dynamic text here */}
+          <Menu/>
+        </div>
       </header>
-
+      
       <section ref={homeRef}>
         <PageOne />
       </section>
