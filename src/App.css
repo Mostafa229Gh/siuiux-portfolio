@@ -90,3 +90,24 @@ header {
   color: inherit;
   text-decoration: none;
 }
+
+.Menu{
+  display: none;
+}
+
+@media (max-width: 640px){
+  .headerOption, .webName > span{
+    display: none;
+  }
+  header{
+    justify-content: space-between;
+  }
+  .Menu{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #logo {
+    width: 32px;
+  }
+}
