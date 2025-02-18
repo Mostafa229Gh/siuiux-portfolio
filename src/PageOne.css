@@ -116,7 +116,7 @@ h1 {
 
 @media (max-width: 640px) {
   .hand {
-    top: 80px;
+    top: calc(50vh - 35%);
   }
   .title {
     flex-direction: column;
@@ -150,6 +150,6 @@ h1 {
     width: 100%;
   }
   .pageOneBottom > p {
-    left: calc(50% - 75px);
+    left: calc(27% + 10px);
   }
 }

@@ -117,7 +117,7 @@ export default function PageFour() {
               <p className="socialTitle">Email</p>
               <p className="socialText">siuiux.2020@gmail.com</p>
             </a>
-            <a href="tel:+09392057344" className="phone">
+            <a href="tel:+989392057344" className="phone">
               <svg
                 width="6.94vw"
                 height="6.94vw"

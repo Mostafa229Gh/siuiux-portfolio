@@ -5,8 +5,12 @@
   box-sizing: border-box;
   border: none;
   outline: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-
+*::-webkit-scrollbar {
+  display: none;
+}
 @font-face {
   font-family: "Noto Serif";
   src: local("Noto Serif"),
@@ -91,18 +95,23 @@ header {
   text-decoration: none;
 }
 
-.Menu{
+.Menu {
   display: none;
 }
 
-@media (max-width: 640px){
-  .headerOption, .webName > span{
+@media (max-width: 640px) {
+  .headerOption,
+  .webName > span {
     display: none;
   }
-  header{
+  body,
+  html {
+    overflow: visible;
+  }
+  header {
     justify-content: space-between;
   }
-  .Menu{
+  .Menu {
     display: flex;
     align-items: center;
     gap: 10px;
