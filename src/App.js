@@ -23,7 +23,7 @@ function Header({ scrollToSection, homeRef, workRef, aboutMeRef, contactRef }) {
 
   return (
     <header>
-      <div className="webName" onClick={() => navigate("/")}>
+      <div className="webName" onClick={(e) => handleHeaderClick(homeRef, e)}>
         <img id="logo" src={logo} alt="Logo" />
         <span>Sina Davari</span>
       </div>
