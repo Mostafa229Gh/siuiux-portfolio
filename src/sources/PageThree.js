@@ -1,6 +1,6 @@
 import "./PageThree.css";
-import lineImg from "./asset/line.png";
-import sinaImg from "./asset/Sina.jpg";
+import lineImg from "../asset/line.png";
+import sinaImg from "../asset/Sina.jpg";
 export default function PageThree() {
   return (
     <div className="containerThree">

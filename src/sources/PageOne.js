@@ -1,7 +1,7 @@
 import "./PageOne.css";
 import React, { useEffect, useState } from "react";
-import hand from "./asset/hand.svg";
-import mouse from "./asset/mouse.svg";
+import hand from "../asset/hand.svg";
+import mouse from "../asset/mouse.svg";
 
 export default function PageOne() {
   const expertiseList = [

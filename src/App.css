@@ -37,7 +37,7 @@
 body,
 html {
   scroll-behavior: smooth;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 section {
@@ -54,17 +54,21 @@ section {
 }
 
 header {
+  font-family: Noto Serif;
+  font-size: clamp(14px, 1.39vw, 23px);
+  line-height: 1.89vw;
+  text-align: center;
   color: #1e1e1e;
   width: 80vw;
   height: 7.56vh;
   position: fixed;
   top: 2.67vh;
-  left: 10vw;
-  right: 10vw;
   display: flex;
   align-items: center;
   flex-direction: row;
   gap: 38vw;
+  justify-content: space-between;
+  justify-self: anchor-center;
 }
 .webName {
   display: flex;

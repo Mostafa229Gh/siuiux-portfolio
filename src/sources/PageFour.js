@@ -1,6 +1,6 @@
 import "./PageFour.css";
-import deskImg from "./asset/contact.png";
-import arrow from "./asset/arrow.png";
+import deskImg from "../asset/contact.png";
+import arrow from "../asset/arrow.png";
 
 export default function PageFour() {
   return (

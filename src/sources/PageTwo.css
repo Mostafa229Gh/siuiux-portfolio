@@ -1,0 +1,159 @@
+.containerTwo {
+  background: linear-gradient(288deg, #dfdfdf 0%, #ffffff 100.34%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+.Explore {
+  width: 80vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  font-family: "Noto Serif";
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 6.05vw;
+}
+
+.expAllButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 13vw;
+  height: 100px;
+  color: #f6f6f6;
+  background-color: #1e1e1e;
+  padding: 6px 6px 6px 6px;
+  border-radius: 16px;
+  transform: scale(0.75);
+  cursor: pointer;
+}
+.expAllButton > p {
+  margin-left: 15px;
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 1.39vw;
+  line-height: 1.94vw;
+  text-align: center;
+}
+
+.arrowButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e1e1e;
+  background-color: #f6f6f6;
+  width: 3.33vw;
+  height: 3.33vw;
+  border-radius: 12px;
+}
+
+.expAllButton:hover {
+  justify-content: right;
+}
+.expAllButton:hover p {
+  display: none;
+}
+.expAllButton:hover .arrowButton {
+  width: 14vw;
+  transition: all 900ms cubic-bezier(0, 0, 0.02, 0.99) 100ms;
+}
+
+.cards {
+  width: 85vw;
+  height: 70vh;
+  margin-top: 4vh;
+  z-index: 1;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.eachCard {
+  width: inherit;
+  height: 70vh;
+  border-radius: 15px;
+  background: #b1b0c9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 3vw;
+  scroll-snap-align: start;
+  margin-bottom: 10px;
+}
+
+.CardsInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Rubik";
+  width: 60%;
+  height: inherit;
+  text-align: justify;
+  padding: 49px 20px 47px 68px;
+}
+
+.InfoDefine > h2 {
+  font-weight: bold;
+  font-size: 2.5vw;
+  line-height: 2.96vw;
+  margin-bottom: 2.3vh;
+}
+
+.InfoDefine > p {
+  font-weight: lighter;
+  font-size: 1.25vw;
+  line-height: 1.67vw;
+}
+
+.CardsInfoFeature {
+  width: 22vw;
+  height: 5.5vh;
+  background: #ededed;
+  border-radius: 12px;
+  display: flex;
+  gap: 1.5vw;
+  align-items: center;
+  font-size: 0.9vw;
+  padding: 10px;
+  margin-bottom: 1vh;
+}
+
+.CardsInfo > a {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  text-decoration: none;
+  color: black;
+}
+
+.cardsImage {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.ImageCard {
+  width: 22vw;
+  height: 28vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+}
+
+.Circles {
+  position: absolute;
+  height: 65vh;
+  width: 10vw;
+  right: 50px;
+  transform: scale(1.2);
+}
