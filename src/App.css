@@ -33,6 +33,10 @@
   font-family: "Rubik";
   src: local("Rubik"), url("../public/font/Rubik-Regular.ttf") format("ttf");
 }
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url("../public/font/Poppins-Bold.ttf") format("ttf");
+}
 
 body,
 html {
@@ -69,6 +73,10 @@ header {
   gap: 38vw;
   justify-content: space-between;
   justify-self: anchor-center;
+}
+header.unFinxed {
+  position: absolute;
+  top: 2.67vh;
 }
 .webName {
   display: flex;

@@ -22,7 +22,7 @@ function Header({ scrollToSection, homeRef, workRef, aboutMeRef, contactRef }) {
   };
 
   return (
-    <header>
+    <header className={`${window.location.pathname === "/works" ? 'unFinxed':''}`}>
       <div className="webName" onClick={(e) => handleHeaderClick(homeRef, e)}>
         <img id="logo" src={logo} alt="Logo" />
         <span>Sina Davari</span>

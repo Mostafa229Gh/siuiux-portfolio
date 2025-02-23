@@ -1,0 +1,208 @@
+.containerWork {
+  background: linear-gradient(252.21deg, #dfdfdf 0%, #ffffff 100.34%);
+  display: flex;
+  flex-direction: row;
+  gap: 6vw;
+  padding: 8vw 7.5vw 0px 7.5vw;
+}
+
+.projects {
+  font-family: "Noto Serif";
+  width: 20vw;
+  height: 55vh;
+  background-color: #1e1e1e;
+  color: #fdc921;
+  padding: 32px 0px;
+  border-radius: 20px;
+}
+.projects > p {
+  margin-bottom: 3vh;
+  font-size: 1.7vw;
+  line-height: 43.58px;
+  text-align: center;
+}
+.projects ul {
+  list-style: none;
+}
+.selectMark {
+  position: absolute;
+  left: 7.5vw;
+  width: 6px;
+  height: 40px;
+  border-radius: 100% 100% 100% 100% / 0% 15% 15% 0%;
+  background-color: #fdc921;
+}
+.projects li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25vw;
+  line-height: 1.7vw;
+  letter-spacing: 0.5px;
+  padding: 1.3vh 0;
+  cursor: pointer;
+}
+.lineSet {
+  width: 20%;
+  height: 4px;
+  border-radius: 4% 0% 0% 4% / 50% 0% 0% 50%;
+  background: #fdc921;
+  margin-left: 10px;
+  transition: width 0.3s ease-in-out;
+}
+.lineSet.expanded {
+  width: 40%;
+}
+
+.pagination {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 1.88vw;
+  line-height: 2.81vw;
+  color: #fdc921;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  margin-top: 10px;
+}
+.pagination button {
+  cursor: pointer;
+}
+.active {
+  fill: #353535;
+}
+.disable {
+  fill: #cdcdcd;
+}
+.pagination span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.9vw;
+  height: 6vh;
+  background: #1e1e1e;
+  border-radius: 12px;
+}
+/* ------------------------------------------------ */
+main {
+  width: 100%;
+}
+.headOfWorksPage {
+  display: flex;
+  align-items: center;
+}
+.TitleOfProject {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1vh;
+}
+.TitleOfProject > h2 {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 2.5vw;
+  line-height: 3.75vw;
+  margin-bottom: 1vh;
+}
+.TitleOfProject > p {
+  font-family: "Rubik";
+  font-weight: 300;
+  font-size: 1.25vw;
+  line-height: 1.48vw;
+}
+.WorksButton {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+.WorksButton > button {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1.04vw;
+  line-height: 1.25vw;
+  text-align: center;
+
+  width: 8.33vw;
+  height: 5vh;
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 7px;
+}
+
+.imageSectionOne {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  margin: 45px 0px;
+}
+.SectionImageCard {
+  width: 18.33vw;
+  height: 23.15vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+}
+
+.definitionSection > h2,
+.TypoColor > div > h2 {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 1.5vw;
+  line-height: 2.81vw;
+  margin-bottom: 1.5vh;
+}
+.definitionSection > p,
+.userPersonal > div > p {
+  font-family: "Rubik";
+  font-size: 1.04vw;
+  line-height: 1.67vw;
+  margin-bottom: 4vh;
+}
+.definitionImages {
+  width: 100%;
+  height: 55vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 4vh;
+}
+.userPersonal {
+  display: flex;
+  gap: 1.5vw;
+  justify-content: center;
+  align-items: center;
+}
+.userPersonalLeftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 6vh;
+}
+.userPersonalP {
+  text-align: justify;
+  font-weight: 600;
+}
+
+.TypoColor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.TypoColorImage {
+  width: 27.19vw;
+  height: 27.78vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 4vh;
+}
+.iconImagesSection {
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 4vh;
+}
