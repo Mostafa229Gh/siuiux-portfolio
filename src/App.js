@@ -1,11 +1,12 @@
 import "./App.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./sources/Home";
 import Work from "./sources/Work";
 import logo from "./asset/siuinx.svg";
 
-function Header({ scrollToSection, homeRef, workRef, aboutMeRef, contactRef }) {
+function Header({ scrollToSection, homeRef, workRef, aboutMeRef, contactRef, resume }) {
   const navigate = useNavigate();
 
   const handleHeaderClick = (ref, event) => {
@@ -22,7 +23,7 @@ function Header({ scrollToSection, homeRef, workRef, aboutMeRef, contactRef }) {
   };
 
   return (
-    <header className={`${window.location.pathname === "/works" ? 'unFinxed':''}`}>
+    <header className={`${window.location.pathname === "/works" ? "unFinxed" : ""}`}>
       <div className="webName" onClick={(e) => handleHeaderClick(homeRef, e)}>
         <img id="logo" src={logo} alt="Logo" />
         <span>Sina Davari</span>
@@ -35,7 +36,7 @@ function Header({ scrollToSection, homeRef, workRef, aboutMeRef, contactRef }) {
           About me
         </span>
         <span>
-          <a className="downloadResume" href="http://localhost:3000">
+          <a className="downloadResume" href={resume}>
             Resume
           </a>
         </span>
@@ -52,6 +53,20 @@ function App() {
   const workRef = React.useRef(null);
   const aboutMeRef = React.useRef(null);
   const contactRef = React.useRef(null);
+  const [resume, setResume] = useState("");
+
+  useEffect(() => {
+    const fetchResumeData = async () => {
+      const response = await axios.get(process.env.REACT_APP_API_RESUME_URL, {
+        headers: {
+          Authorization: `Token ${process.env.REACT_APP_API_KEY}`,
+        },
+      });
+      setResume(response.data[0].resume);
+    };
+
+    fetchResumeData();
+  }, []);
 
   const scrollToSection = (ref, event) => {
     if (ref.current) {
@@ -67,11 +82,19 @@ function App() {
         workRef={workRef}
         aboutMeRef={aboutMeRef}
         contactRef={contactRef}
+        resume={resume}
       />
       <Routes>
         <Route
           path="/"
-          element={<Home homeRef={homeRef} workRef={workRef} aboutMeRef={aboutMeRef} contactRef={contactRef} />}
+          element={
+            <Home
+              homeRef={homeRef}
+              workRef={workRef}
+              aboutMeRef={aboutMeRef}
+              contactRef={contactRef}
+              resume={resume}/>
+          }
         />
         <Route path="/works" element={<Work />} />
       </Routes>

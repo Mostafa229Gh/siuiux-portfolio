@@ -205,11 +205,12 @@ aside {
 }
 .userPersonalP {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 2vw;
   font-weight: 600;
   font-size: 1.2vw !important;
   margin-bottom: 1vh !important;
+  margin-left: 1.2vw;
 }
 
 .TypoColor {

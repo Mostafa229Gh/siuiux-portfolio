@@ -15,7 +15,7 @@ export default function Work() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(process.env.REACT_APP_API_BASE_URL, {
+        const response = await axios.get(process.env.REACT_APP_API_WORKS_URL, {
           headers: {
             Authorization: `Token ${process.env.REACT_APP_API_KEY}`,
           },
@@ -150,12 +150,12 @@ export default function Work() {
           </div>
           <div className="WorksButton">
             <button>
-              <a href={selectedProject.ui_kit_link} target="_blank">
+              <a href={selectedProject.ui_kit_link} target="_blank" rel="noreferrer">
                 See UI Kit
               </a>
             </button>
             <button>
-              <a href={selectedProject.case_study_pdf_file} target="_blank">
+              <a href={selectedProject.case_study_pdf_file} target="_blank" rel="noreferrer">
                 Case Study
               </a>
             </button>

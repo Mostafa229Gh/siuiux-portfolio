@@ -1,7 +1,7 @@
 import "./PageThree.css";
 import lineImg from "../asset/line.png";
 import sinaImg from "../asset/Sina.jpg";
-export default function PageThree() {
+export default function PageThree( { resume } ) {
   return (
     <div className="containerThree">
       <div className="aboutMeSection">
@@ -18,7 +18,7 @@ export default function PageThree() {
           world more beautiful, simple and lovely through my designs. I look
           forward to working with you to create unforgettable experiences
         </p>
-        <a href="http://localhost:3000">
+        <a href={resume}>
           <div className="resumeBotton">
             <div className="resumeText">
               <p>Resume</p>

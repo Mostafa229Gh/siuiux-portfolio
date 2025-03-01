@@ -1,10 +1,10 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PageOne from "./PageOne";
 import PageTwo from "./PageTwo";
 import PageThree from "./PageThree";
 import PageFour from "./PageFour";
 
-function Home({ homeRef, workRef, aboutMeRef, contactRef }) {
+function Home({ homeRef, workRef, aboutMeRef, contactRef, resume }) {
   const [activeSection, setActiveSection] = useState("home");
 
   const resetHeaderStyles = () => {
@@ -18,14 +18,6 @@ function Home({ homeRef, workRef, aboutMeRef, contactRef }) {
     if (element) {
       element.style.fontWeight = fontWeight;
       element.style.color = color;
-    }
-  };
-
-  const scrollToSection = (ref, event) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
-    resetHeaderStyles();
-    if (ref !== homeRef) {
-      applyActiveStyles(event.target);
     }
   };
 
@@ -154,7 +146,7 @@ function Home({ homeRef, workRef, aboutMeRef, contactRef }) {
         <PageTwo />
       </section>
       <section ref={aboutMeRef}>
-        <PageThree />
+        <PageThree resume={resume} />
       </section>
       <section ref={contactRef}>
         <PageFour />
