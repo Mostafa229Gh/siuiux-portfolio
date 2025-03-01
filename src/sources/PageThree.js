@@ -31,7 +31,7 @@ export default function PageThree() {
         </a>
       </div>
 
-      <img id="lineImg" src={lineImg} alt="line" />
+      <img id="lineImg" src={lineImg} alt="" />
 
       <div className="aboutMeRightSide">
         <img id="sinaImg" src={sinaImg} alt="sina" />

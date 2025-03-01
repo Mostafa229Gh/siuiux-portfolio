@@ -6,6 +6,17 @@
   padding: 8vw 7.5vw 0px 7.5vw;
 }
 
+aside {
+  width: 100%;
+}
+.asideMenu {
+  position: absolute;
+}
+.asideMenu.fixed {
+  position: fixed;
+  top: 6vh;
+}
+
 .projects {
   font-family: "Noto Serif";
   width: 20vw;
@@ -24,14 +35,6 @@
 .projects ul {
   list-style: none;
 }
-.selectMark {
-  position: absolute;
-  left: 7.5vw;
-  width: 6px;
-  height: 40px;
-  border-radius: 100% 100% 100% 100% / 0% 15% 15% 0%;
-  background-color: #fdc921;
-}
 .projects li {
   display: flex;
   justify-content: space-between;
@@ -41,6 +44,14 @@
   letter-spacing: 0.5px;
   padding: 1.3vh 0;
   cursor: pointer;
+}
+.selectMark {
+  position: absolute;
+  left: 0;
+  width: 6px;
+  height: 40px;
+  border-radius: 100% 100% 100% 100% / 0% 15% 15% 0%;
+  background-color: #fdc921;
 }
 .lineSet {
   width: 20%;
@@ -67,6 +78,7 @@
   margin-top: 10px;
 }
 .pagination button {
+  background: transparent;
   cursor: pointer;
 }
 .active {
@@ -84,13 +96,12 @@
   background: #1e1e1e;
   border-radius: 12px;
 }
-/* ------------------------------------------------ */
-main {
-  width: 100%;
-}
+
+
 .headOfWorksPage {
   display: flex;
   align-items: center;
+  gap: 1vw;
 }
 .TitleOfProject {
   width: 100%;
@@ -110,8 +121,11 @@ main {
   font-family: "Rubik";
   font-weight: 300;
   font-size: 1.25vw;
-  line-height: 1.48vw;
+  line-height: 1.6vw;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
+
 .WorksButton {
   display: flex;
   flex-direction: column;
@@ -127,18 +141,23 @@ main {
   width: 8.33vw;
   height: 5vh;
   background-color: #1e1e1e;
-  color: white;
   border-radius: 7px;
 }
+.WorksButton > button > a {
+  text-decoration: none;
+  color: white;
+}
 
-.imageSectionOne {
+.imageSectionProject {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2vw;
   margin: 45px 0px;
 }
-.SectionImageCard {
+.imageSmallCard {
+  flex-grow: 0;
   width: 18.33vw;
   height: 23.15vh;
   background-size: cover;
@@ -146,43 +165,51 @@ main {
   border-radius: 16px;
 }
 
-.definitionSection > h2,
-.TypoColor > div > h2 {
+.definitionSection h2 {
   font-family: "Poppins";
   font-weight: 700;
   font-size: 1.5vw;
   line-height: 2.81vw;
   margin-bottom: 1.5vh;
 }
-.definitionSection > p,
-.userPersonal > div > p {
+.definitionSection p {
   font-family: "Rubik";
   font-size: 1.04vw;
   line-height: 1.67vw;
   margin-bottom: 4vh;
 }
-.definitionImages {
+
+.imageLargeCard {
   width: 100%;
   height: 55vh;
   background-size: cover;
   background-position: center;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 4vh;
 }
+
 .userPersonal {
   display: flex;
-  gap: 1.5vw;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  gap: 1.3vw;
 }
 .userPersonalLeftSide {
   display: flex;
   flex-direction: column;
-  gap: 6vh;
+  gap: 1vh;
+}
+.PersonalImagecard {
+  width: 20vw;
+  height: 35vh;  
 }
 .userPersonalP {
-  text-align: justify;
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
   font-weight: 600;
+  font-size: 1.2vw !important;
+  margin-bottom: 1vh !important;
 }
 
 .TypoColor {
@@ -193,16 +220,63 @@ main {
 .TypoColorImage {
   width: 27.19vw;
   height: 27.78vh;
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
   margin-bottom: 4vh;
 }
+
 .iconImagesSection {
   width: 100%;
   height: 40vh;
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  margin-bottom: 4vh;
+}
+
+
+.BackToTopButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+  cursor: pointer;
+  transition-duration: 200ms;
+  overflow: hidden;
+  position: fixed;
+  bottom: 1vh;
+  right: 1vw;
+}
+.BackToTopSvgIcon {
+  width: 12px;
+  transition-duration: 200ms;
+}
+.BackToTopSvgIcon path {
+  fill: white;
+}
+.BackToTopButton:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 200ms;
+  background-color: rgb(181, 160, 255);
+  align-items: center;
+  transition-delay: 200ms;
+}
+.BackToTopButton:hover .BackToTopSvgIcon {
+  transition-duration: 200ms;
+  transform: translateY(-220%);
+}
+.BackToTopButton::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Back to Top";
+  color: white;
+  font-size: 0px;
+}
+.BackToTopButton:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  transition-delay: 200ms;
+  transition-duration: 200ms;
 }

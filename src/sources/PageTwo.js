@@ -93,7 +93,7 @@ export default function PageTwo() {
               <div>
                 {project.features.map((feature, index) => (
                   <div key={index} className="CardsInfoFeature">
-                    <img src={Checked} alt="-" />
+                    <img src={Checked} alt="" />
                     <p>{feature}</p>
                   </div>
                 ))}
@@ -129,7 +129,7 @@ export default function PageTwo() {
           </div>
         ))}
       </div>
-      <img src={circles} className="Circles" alt="-" />
+      <img src={circles} className="Circles" alt="" />
     </div>
   );
 }

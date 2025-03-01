@@ -24,7 +24,7 @@ export default function PageOne() {
   return (
     <div className="container">
       <div className="hand">
-        <img src={hand} alt="Hi" />
+        <img src={hand} alt="" />
       </div>
       <div className="title">
         <h1>Hi there!</h1>
@@ -83,7 +83,7 @@ export default function PageOne() {
         </svg>
 
         <div className="mouse">
-          <img src={mouse} alt="mouse" />
+          <img src={mouse} alt="" />
         </div>
 
         <p>Get to know me more</p>
