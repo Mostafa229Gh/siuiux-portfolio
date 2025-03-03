@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./Work.css";
+import React, { useState, useEffect } from "react";
+import { fetchProjects } from "./api";
+import Loading from "./Loading";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -13,25 +14,16 @@ export default function Work() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(process.env.REACT_APP_API_WORKS_URL, {
-          headers: {
-            Authorization: `Token ${process.env.REACT_APP_API_KEY}`,
-          },
-        });
-        setProjectsData(response.data);
-        if (response.data.length > 0) {
-          setSelectedProject(response.data[0]);
-        }
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
+    const loadData = async () => {
+      const { data, loading, error } = await fetchProjects();
+      setProjectsData(data);
+      setLoading(loading);
+      setError(error);
+      if (data.length > 0) {
+        setSelectedProject(data[0]);
       }
     };
-
-    fetchData();
+    loadData();
   }, []);
 
   const totalPages = Math.ceil(projectsData.length / ITEMS_PER_PAGE);
@@ -73,7 +65,12 @@ export default function Work() {
     window.scrollTo(0, 0);
   }
 
-  if (loading) return <div className="container">Loading...</div>;
+  if (loading)
+    return (
+      <div className="container">
+        <Loading />
+      </div>
+    );
 
   if (error) return <div className="container">Error: {error.message}</div>;
 
