@@ -1,0 +1,97 @@
+.cards {
+  background: linear-gradient(273deg, #dfdfdf 0%, #ffffff 100.34%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: -55vh;
+  /* margin-top: 4vh; */
+}
+.cardLoading {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -50vh;
+}
+.cardsContainer {
+  height: 72vh;
+  position: sticky;
+  top: 40vh;
+}
+.eachCard {
+  width: 85vw;
+  height: 70vh;
+  border-radius: 15px;
+  /* background: #b1b0c9; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 3vw;
+  /* scroll-snap-align: start; */
+  margin-bottom: 10px;
+
+  position: relative;
+}
+
+.CardsInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Rubik";
+  width: 60%;
+  height: inherit;
+  text-align: justify;
+  padding: 49px 20px 47px 68px;
+}
+
+.InfoDefine > h2 {
+  font-weight: bold;
+  font-size: 2.5vw;
+  line-height: 2.96vw;
+  margin-bottom: 2.3vh;
+}
+
+.InfoDefine > p {
+  font-weight: lighter;
+  font-size: 1.25vw;
+  line-height: 1.67vw;
+}
+
+.CardsInfoFeature {
+  width: 22vw;
+  height: 5.5vh;
+  background: #ededed;
+  border-radius: 10px;
+  display: flex;
+  gap: 1.5vw;
+  align-items: center;
+  font-size: 0.9vw;
+  padding: 10px;
+  margin-bottom: 1vh;
+}
+
+.CardsInfo > span {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.cardsImage {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.ImageCard {
+  width: 22vw;
+  height: 28vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+}
