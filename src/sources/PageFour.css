@@ -149,13 +149,13 @@
 #deskImg {
   width: 52vw;
   position: absolute;
-  top: calc(400vh - 34.79vw);
+  top: calc(688vh - 34.79vw);
   left: calc(100vw - 54vw);
 }
 
 .HoverClick {
   position: absolute;
-  top: calc(400vh - 73vh);
+  top: calc(688vh - 73vh);
   left: calc(100vw - 40vw);
   font-family: "Mali";
   font-size: 1.39vw;
@@ -168,7 +168,7 @@
   height: 6.01vw;
   transform: scale(0.7) rotate(330deg);
   position: absolute;
-  top: calc(400vh - 70vh);
+  top: calc(688vh - 70vh);
   left: calc(100vw - 60vw);
 }
 

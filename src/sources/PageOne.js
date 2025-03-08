@@ -75,9 +75,9 @@ export default function PageOne() {
               y2="50"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#323232" />
-              <stop offset="0.500102" stop-color="#F2F2F2" />
-              <stop offset="1" stop-color="#323232" />
+              <stop stopColor="#323232" />
+              <stop offset="0.500102" stopColor="#F2F2F2" />
+              <stop offset="1" stopColor="#323232" />
             </linearGradient>
           </defs>
         </svg>
