@@ -2,6 +2,7 @@ import "./Work.css";
 import React, { useState, useEffect } from "react";
 import { fetchProjects } from "./api";
 import Loading from "./Loading";
+import { useLocation } from "react-router-dom";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -13,6 +14,8 @@ export default function Work() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const location = useLocation();
+
   useEffect(() => {
     const loadData = async () => {
       const { data, loading, error } = await fetchProjects();
@@ -20,11 +23,13 @@ export default function Work() {
       setLoading(loading);
       setError(error);
       if (data.length > 0) {
-        setSelectedProject(data[0]);
+        const projectId = location.state?.projectId;
+        const project = projectId ? data.find(p => p.id === projectId) : data[0];
+        setSelectedProject(project);
       }
     };
     loadData();
-  }, []);
+  }, [location.state]);
 
   const totalPages = Math.ceil(projectsData.length / ITEMS_PER_PAGE);
   const currentProjects = projectsData.slice(
@@ -36,6 +41,7 @@ export default function Work() {
     if (currentProjects.length > 0) {
       setSelectedProject(currentProjects[0]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
   const handlePrev = () => {
@@ -44,22 +50,6 @@ export default function Work() {
   const handleNext = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const asideMenu = document.querySelector(".asideMenu");
-      if (asideMenu) {
-        if (window.scrollY > 45) {
-          asideMenu.classList.add("fixed");
-        } else {
-          asideMenu.classList.remove("fixed");
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [projectsData]);
 
   function scrollToTop() {
     window.scrollTo(0, 0);
@@ -178,7 +168,7 @@ export default function Work() {
           <p>{selectedProject.problem_and_challenge}</p>
 
           <h2>Features</h2>
-          <p>{selectedProject.features}</p>
+          <p>{selectedProject.the_features}</p>
 
           <h2>Project Duration</h2>
           <p>{selectedProject.project_duration}</p>

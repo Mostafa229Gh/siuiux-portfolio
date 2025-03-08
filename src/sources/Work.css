@@ -2,18 +2,15 @@
   background: linear-gradient(252.21deg, #dfdfdf 0%, #ffffff 100.34%);
   display: flex;
   flex-direction: row;
-  gap: 6vw;
+  gap: 3vw;
   padding: 8vw 7.5vw 0px 7.5vw;
 }
 
 aside {
-  width: 100%;
+  width: 30%;
 }
 .asideMenu {
-  position: absolute;
-}
-.asideMenu.fixed {
-  position: fixed;
+  position: sticky;
   top: 6vh;
 }
 
@@ -97,7 +94,9 @@ aside {
   border-radius: 12px;
 }
 
-
+main {
+  width: 100%;
+}
 .headOfWorksPage {
   display: flex;
   align-items: center;
