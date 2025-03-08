@@ -3,8 +3,9 @@ import PageOne from "./PageOne";
 import PageTwo from "./PageTwo";
 import PageThree from "./PageThree";
 import PageFour from "./PageFour";
+import CardWrapper from "./CardWrapper";
 
-function Home({ homeRef, workRef, aboutMeRef, contactRef, resume }) {
+function Home({ homeRef, workRef, cardRef, aboutMeRef, contactRef, resume }) {
   const [activeSection, setActiveSection] = useState("home");
 
   const resetHeaderStyles = () => {
@@ -14,7 +15,7 @@ function Home({ homeRef, workRef, aboutMeRef, contactRef, resume }) {
     });
   };
 
-  const applyActiveStyles = (element, color = "#fca311", fontWeight = "bold") => {
+  const applyActiveStyles = ( element, color = "#fca311", fontWeight = "bold") => {
     if (element) {
       element.style.fontWeight = fontWeight;
       element.style.color = color;
@@ -44,21 +45,39 @@ function Home({ homeRef, workRef, aboutMeRef, contactRef, resume }) {
       },
       { threshold: 0.6 }
     );
-
+  
     sections.forEach((section) => {
       if (section.ref.current) {
         observer.observe(section.ref.current);
       }
     });
-
+  
+    const cardObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection("work");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+  
+    if (cardRef.current) {
+      cardObserver.observe(cardRef.current);
+    }
+  
     return () => {
       sections.forEach((section) => {
         if (section.ref.current) {
           observer.unobserve(section.ref.current);
         }
       });
+      if (cardRef.current) {
+        cardObserver.unobserve(cardRef.current);
+      }
     };
-  }, [homeRef, workRef, aboutMeRef, contactRef]);
+  }, [homeRef, workRef, cardRef, aboutMeRef, contactRef]);
 
   useEffect(() => {
     resetHeaderStyles();
@@ -144,6 +163,9 @@ function Home({ homeRef, workRef, aboutMeRef, contactRef, resume }) {
       </section>
       <section ref={workRef}>
         <PageTwo />
+      </section>
+      <section ref={cardRef}>
+        <CardWrapper />
       </section>
       <section ref={aboutMeRef}>
         <PageThree resume={resume} />

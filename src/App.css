@@ -49,6 +49,7 @@ section {
 }
 
 .App {
+  background: linear-gradient(272deg, #dfdfdf 0%, #ffffff 100.34%);
   font-family: Noto Serif;
   font-size: clamp(14px, 1.39vw, 23px);
   line-height: 1.89vw;
@@ -58,6 +59,7 @@ section {
 }
 
 header {
+  z-index: 10;
   font-family: Noto Serif;
   font-size: clamp(14px, 1.39vw, 23px);
   line-height: 1.89vw;

@@ -51,6 +51,7 @@ function Header({ scrollToSection, homeRef, workRef, aboutMeRef, contactRef, res
 function App() {
   const homeRef = React.useRef(null);
   const workRef = React.useRef(null);
+  const cardRef = React.useRef(null);
   const aboutMeRef = React.useRef(null);
   const contactRef = React.useRef(null);
   const [resume, setResume] = useState("");
@@ -91,6 +92,7 @@ function App() {
             <Home
               homeRef={homeRef}
               workRef={workRef}
+              cardRef={cardRef}
               aboutMeRef={aboutMeRef}
               contactRef={contactRef}
               resume={resume}/>
