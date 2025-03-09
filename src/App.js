@@ -16,7 +16,7 @@ function Header({ scrollToSection, homeRef, workRef, aboutMeRef, contactRef, res
         if (ref.current) {
           ref.current.scrollIntoView({ behavior: "smooth" });
         }
-      }, 100);
+      }, 800);
     } else {
       scrollToSection(ref, event);
     }

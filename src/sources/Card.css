@@ -40,7 +40,7 @@
   flex-direction: column;
   justify-content: space-between;
   font-family: "Rubik";
-  width: 60%;
+  width: 70%;
   height: inherit;
   text-align: justify;
   padding: 49px 20px 47px 68px;
@@ -59,7 +59,13 @@
   line-height: 1.67vw;
 }
 
+.CardsFeatureContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px 8px;
+}
 .CardsInfoFeature {
+  flex-grow: 0;
   width: 22vw;
   height: 5.5vh;
   background: #ededed;
@@ -76,8 +82,6 @@
   display: flex;
   align-items: center;
   gap: 1vw;
-  text-decoration: none;
-  color: black;
   cursor: pointer;
   width: fit-content;
 }

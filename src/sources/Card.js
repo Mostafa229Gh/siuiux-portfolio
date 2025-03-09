@@ -23,7 +23,7 @@ export default function Card({ i, project, pickColorCard, progress, range, targe
             <h2>{project.title}</h2>
             <p>{project.about}</p>
           </div>
-          <div>
+          <div className="CardsFeatureContainer">
             {project.features.map((f, index) => (
               <div key={index} className="CardsInfoFeature">
                 <img src={Checked} alt="" />
