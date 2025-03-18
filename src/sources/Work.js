@@ -10,6 +10,7 @@ export default function Work() {
   const [projectsData, setProjectsData] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isProjectsButton, setIsProjectsButton] = useState(false);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,7 +25,9 @@ export default function Work() {
       setError(error);
       if (data.length > 0) {
         const projectId = location.state?.projectId;
-        const project = projectId ? data.find(p => p.id === projectId) : data[0];
+        const project = projectId
+          ? data.find((p) => p.id === projectId)
+          : data[0];
         setSelectedProject(project);
       }
     };
@@ -69,7 +72,7 @@ export default function Work() {
 
   return (
     <div className="containerWork">
-      <aside>
+      <aside style={isProjectsButton ? { display: "flex" } : {}}>
         <div className="asideMenu">
           <div className="projects">
             <p>PROJECTS</p>
@@ -80,6 +83,9 @@ export default function Work() {
                   onClick={() => {
                     setSelectedProject(project);
                     scrollToTop();
+                    setTimeout(() => {
+                      setIsProjectsButton(false)
+                    }, 550);
                   }}
                   className={
                     selectedProject.id === project.id ? "activeProject" : ""
@@ -132,17 +138,69 @@ export default function Work() {
       <main>
         <div className="headOfWorksPage">
           <div className="TitleOfProject">
-            <h2>{selectedProject.title}</h2>
+            <h2>
+              {selectedProject.title}
+              <button
+                className="mobileProjectsListButton"
+                onClick={() => {
+                  setIsProjectsButton(true);
+                }}
+              >
+                Projects list
+                <span>
+                  <svg
+                    width="18"
+                    height="14"
+                    viewBox="0 0 18 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.5 0C5.94772 0 5.5 0.447715 5.5 1C5.5 1.55228 5.94772 2 6.5 2H15.5C16.0523 2 16.5 1.55228 16.5 1C16.5 0.447715 16.0523 0 15.5 0H6.5Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.5 6C5.94772 6 5.5 6.44772 5.5 7C5.5 7.55228 5.94772 8 6.5 8H16.5C17.0523 8 17.5 7.55228 17.5 7C17.5 6.44772 17.0523 6 16.5 6H6.5Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M5.5 13C5.5 12.4477 5.94772 12 6.5 12H12.5C13.0523 12 13.5 12.4477 13.5 13C13.5 13.5523 13.0523 14 12.5 14H6.5C5.94772 14 5.5 13.5523 5.5 13Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M2.00017 0.134142C1.52187 -0.142001 0.910284 0.0218744 0.634142 0.500167C0.357999 0.97846 0.521874 1.59005 1.00017 1.86619L1.00883 1.87119C1.48712 2.14733 2.09871 1.98346 2.37485 1.50517C2.65099 1.02687 2.48712 0.415284 2.00883 0.139142L2.00017 0.134142Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M0.634142 6.50017C0.910284 6.02187 1.52187 5.858 2.00017 6.13414L2.00883 6.13914C2.48712 6.41528 2.65099 7.02687 2.37485 7.50517C2.09871 7.98346 1.48712 8.14734 1.00883 7.87119L1.00017 7.86619C0.521874 7.59005 0.357999 6.97846 0.634142 6.50017Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M2.00017 12.1341C1.52187 11.858 0.910284 12.0219 0.634142 12.5002C0.357999 12.9785 0.521874 13.59 1.00017 13.8662L1.00883 13.8712C1.48712 14.1473 2.09871 13.9835 2.37485 13.5052C2.65099 13.0269 2.48712 12.4153 2.00883 12.1391L2.00017 12.1341Z"
+                      fill="white"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </h2>
             <p>{selectedProject.sentence}</p>
           </div>
           <div className="WorksButton">
             <button>
-              <a href={selectedProject.ui_kit_link} target="_blank" rel="noreferrer">
+              <a
+                href={selectedProject.ui_kit_link}
+                target="_blank"
+                rel="noreferrer"
+              >
                 See UI Kit
               </a>
             </button>
             <button>
-              <a href={selectedProject.case_study_pdf_file} target="_blank" rel="noreferrer">
+              <a
+                href={selectedProject.case_study_pdf_file}
+                target="_blank"
+                rel="noreferrer"
+              >
                 Case Study
               </a>
             </button>
@@ -298,6 +356,26 @@ export default function Work() {
               backgroundImage: `url(${selectedProject.wireframe_image})`,
             }}
           ></div>
+        </div>
+        <div className="mobileWorksButton">
+          <button>
+            <a
+              href={selectedProject.ui_kit_link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              See UI Kit
+            </a>
+          </button>
+          <button>
+            <a
+              href={selectedProject.case_study_pdf_file}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Case Study
+            </a>
+          </button>
         </div>
       </main>
 

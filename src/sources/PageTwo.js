@@ -65,7 +65,7 @@ export default function PageTwo({ isMobile }) {
   if (isMobile) {
     if (loading)
       return (
-        <div>
+        <div className="container">
           <Loading />
         </div>
       );
