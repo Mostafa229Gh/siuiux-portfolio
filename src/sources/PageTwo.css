@@ -109,19 +109,21 @@
     height: fit-content;
   }
   .expAllButton {
-    width: 55vw;
-    height: 60px;
+    width: 170px;
+    height: 50px;
+    border-radius: 10px;
   }
   .expAllButton > p {
-    font-size: 6.39vw;
+    font-size: 20px;
   }
   .arrowButton {
-    width: 12.33vw;
-    height: 12.33vw;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
   }
   .expAllButton:hover .arrowButton {
-    width: 52vw;
-    transition: all 900ms cubic-bezier(0, 0, 0.02, 0.99) 100ms;
+    width: 35px;
+    transition: none;
   }
   .cardsPlace {
     width: 85vw;
@@ -161,28 +163,33 @@
   .mobileInfoDefine > h2 {
     text-align: center;
     font-weight: bold;
-    font-size: 6.5vw;
+    font-size: 20px;
     margin-bottom: 3vh;
   }
   .mobileInfoDefine > p {
     font-weight: lighter;
-    font-size: 3.25vw;
-    line-height: 4vw;
+    font-size: 12px;
+    line-height: 24px;
   }
   .mobileCardsFeature {
     width: 100%;
   }
   .mobileCardsInfoFeature {
     width: 100%;
+    height: 30px;
+
     height: 5vh;
     background: #ededed;
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     gap: 1.5vw;
     align-items: center;
-    font-size: 4vw;
+    font-size: 12px;
     padding: 10px;
     margin-bottom: 4px;
+  }
+  .mobileCardsInfoFeature > img {
+    transform: scale(0.7);
   }
   .mobileCardsInfo > span {
     display: flex;
