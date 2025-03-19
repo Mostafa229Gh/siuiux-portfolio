@@ -4,10 +4,12 @@ import axios from "axios";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./sources/Home";
 import Work from "./sources/Work";
+import Burger from "./sources/BurgerMenu";
 import logo from "./asset/siuinx.svg";
 
 function Header({ scrollToSection, homeRef, workRef, aboutMeRef, contactRef, resume }) {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleHeaderClick = (ref, event) => {
     if (window.location.pathname !== "/") {
@@ -28,8 +30,14 @@ function Header({ scrollToSection, homeRef, workRef, aboutMeRef, contactRef, res
         <img id="logo" src={logo} alt="Logo" />
         <span>Sina Davari</span>
       </div>
-      <div className="headerOption">
-        <span data-section="work" onClick={(e) => handleHeaderClick(workRef, e)}>
+      <div className="burgerMenu">
+        <p></p>
+        <span>
+          <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
+        </span>
+      </div>
+      <div className={`headerOption mobileHeaderOption ${isOpen ? "open" : ""}`}>
+        <span data-section="work" onClick={(e) => handleHeaderClick(workRef, e)} >
           Work
         </span>
         <span data-section="aboutMe" onClick={(e) => handleHeaderClick(aboutMeRef, e)}>

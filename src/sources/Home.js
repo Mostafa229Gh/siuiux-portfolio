@@ -10,10 +10,12 @@ function Home({ homeRef, workRef, cardRef, aboutMeRef, contactRef, resume }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
 
   const resetHeaderStyles = () => {
-    document.querySelectorAll(".headerOption span").forEach((item) => {
-      item.style.fontWeight = "normal";
-      item.style.color = "#1e1e1e";
-    });
+    document
+      .querySelectorAll(".headerOption span, .burgerMenu p")
+      .forEach((item) => {
+        item.style.fontWeight = "normal";
+        item.style.color = "#1e1e1e";
+      });
   };
 
   const applyActiveStyles = (
@@ -99,27 +101,54 @@ function Home({ homeRef, workRef, cardRef, aboutMeRef, contactRef, resume }) {
     const activeElement = document.querySelector(
       `.headerOption span[data-section="${activeSection}"]`
     );
+    const menu = document.querySelector(".mobileHeaderOption");
+    const currentPage = document.querySelector(".burgerMenu p");
+    const burger = document.querySelectorAll(".burger span");
 
     const webNameText = document.querySelector(".webName span");
     const logo = document.getElementById("logo");
 
+    currentPage.innerHTML = activeSection ? `${activeSection}` : "Home";
+
     if (activeSection === "aboutMe") {
-      document.querySelectorAll(".headerOption span").forEach((item) => {
-        item.style.color = "#ffffff";
-      });
+      document
+        .querySelectorAll(".headerOption span, .burgerMenu p")
+        .forEach((item) => {
+          item.style.color = "#ffffff";
+        });
       applyActiveStyles(activeElement);
+
+      if(isMobile){
+        menu.style.background = "#26262680";
+        menu.style.backdropFilter = "blur(8px)";
+        menu.style.border = " 1px solid #767676";
+      }
+
       if (webNameText && logo) {
+        burger.forEach((item) => {
+          item.style.background = "#ffffff";
+        });
         webNameText.style.color = "#ffffff";
         logo.style.filter = "invert(1)";
       }
     } else {
       applyActiveStyles(activeElement);
+
+      if(isMobile){
+        menu.style.background = "#fbfbfbc4";
+        menu.style.backdropFilter = "blur(8px)";
+        menu.style.border = " 1px solid #d0d0d0";
+      }
+
       if (webNameText && logo) {
+        burger.forEach((item) => {
+          item.style.background = "#1e1e1e";
+        });
         webNameText.style.color = "#1e1e1e";
         logo.style.filter = "invert(0)";
       }
     }
-  }, [activeSection]);
+  }, [activeSection, isMobile]);
 
   useEffect(() => {
     if (!isMobile) {
