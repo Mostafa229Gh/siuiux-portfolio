@@ -124,7 +124,7 @@ export default function PageTwo({ isMobile }) {
                 <p>{currentProject.about}</p>
               </div>
               <div className="mobileCardsFeature">
-                {currentProject.features.map((f, index) => (
+                {currentProject.features.slice(0, 4).map((f, index) => (
                   <div key={index} className="mobileCardsInfoFeature">
                     <img src={Checked} alt="" />
                     <p>{f.feature}</p>

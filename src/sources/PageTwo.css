@@ -167,6 +167,11 @@
     margin-bottom: 3vh;
   }
   .mobileInfoDefine > p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
     font-weight: lighter;
     font-size: 12px;
     line-height: 24px;
