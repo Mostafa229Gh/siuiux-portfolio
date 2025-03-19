@@ -1,0 +1,228 @@
+.containerTwo {
+  background: linear-gradient(288deg, #dfdfdf 0%, #ffffff 100.34%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+.Explore {
+  width: 80vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+  position: relative;
+}
+.Explore.fixed {
+  position: fixed;
+  transform: scale(0.9);
+  top: 50px;
+  z-index: 10;
+}
+
+.headerPageTwo {
+  font-family: "Noto Serif";
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 6.05vw;
+}
+
+.expAllButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 13vw;
+  height: 100px;
+  color: #f6f6f6;
+  background-color: #1e1e1e;
+  padding: 6px 6px 6px 6px;
+  border-radius: 16px;
+  transform: scale(0.75);
+  cursor: pointer;
+}
+.expAllButton > p {
+  margin-left: 15px;
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 1.39vw;
+  line-height: 1.94vw;
+  text-align: center;
+}
+
+.arrowButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e1e1e;
+  background-color: #f6f6f6;
+  width: 3.33vw;
+  height: 3.33vw;
+  border-radius: 12px;
+}
+
+.expAllButton:hover {
+  justify-content: right;
+}
+.expAllButton:hover p {
+  display: none;
+}
+.expAllButton:hover .arrowButton {
+  width: 14vw;
+  transition: all 900ms cubic-bezier(0, 0, 0.02, 0.99) 100ms;
+}
+
+.cardsPlace {
+  width: 85vw;
+  height: 70vh;
+  margin-top: 4vh;
+  /* z-index: 1;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory; */
+}
+
+/* .Circles {
+  position: absolute;
+  height: 65vh;
+  width: 10vw;
+  right: 50px;
+  transform: scale(1.2);
+} */
+
+@media (max-width: 640px) {
+  .headerPageTwo {
+    display: none;
+  }
+  .containerTwo {
+    flex-direction: column-reverse;
+    justify-content: end;
+    gap: 2vh;
+    padding: 20px 0;
+  }
+  .Explore {
+    width: fit-content;
+    height: fit-content;
+  }
+  .expAllButton {
+    width: 170px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  .expAllButton > p {
+    font-size: 20px;
+  }
+  .arrowButton {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+  }
+  .expAllButton:hover .arrowButton {
+    width: 35px;
+    transition: none;
+  }
+  .cardsPlace {
+    width: 85vw;
+    height: 70vh;
+  }
+  .mobileCard {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 12px;
+  }
+  .mobileImageCard {
+    width: 60vw;
+    height: 21vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    position: relative;
+    top: -70px;
+  }
+  .mobileCardsInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Rubik";
+    text-align: justify;
+    padding: 0 16px;
+    justify-content: space-between;
+    position: relative;
+    top: -40px;
+    height: 100%;
+    width: 100%;
+  }
+  .mobileInfoDefine > h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 3vh;
+  }
+  .mobileInfoDefine > p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    font-weight: lighter;
+    font-size: 12px;
+    line-height: 24px;
+  }
+  .mobileCardsFeature {
+    width: 100%;
+  }
+  .mobileCardsInfoFeature {
+    width: 100%;
+    height: 30px;
+
+    height: 5vh;
+    background: #ededed;
+    border-radius: 8px;
+    display: flex;
+    gap: 1.5vw;
+    align-items: center;
+    font-size: 12px;
+    padding: 10px;
+    margin-bottom: 4px;
+  }
+  .mobileCardsInfoFeature > img {
+    transform: scale(0.7);
+  }
+  .mobileCardsInfo > span {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    cursor: pointer;
+    width: fit-content;
+    font-size: 1.1rem;
+    position: relative;
+    top: 20px;
+  }
+
+  .mobileCardsPagination {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 40px;
+  }
+  .mobileCardsPagination button {
+    background: transparent;
+    cursor: pointer;
+  }
+  .active {
+    fill: #353535;
+  }
+  .disable {
+    fill: #cdcdcd;
+  }
+}

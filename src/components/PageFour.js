@@ -1,6 +1,6 @@
 import "./PageFour.css";
-import deskImg from "./asset/contact.png";
-import arrow from "./asset/arrow.png";
+import deskImg from "../asset/contact.png";
+import arrow from "../asset/arrow.png";
 
 export default function PageFour() {
   return (
@@ -30,9 +30,9 @@ export default function PageFour() {
                     width="99.333"
                     height="99.3333"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                   >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -84,9 +84,9 @@ export default function PageFour() {
                     width="99.333"
                     height="86.8333"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                   >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -117,7 +117,7 @@ export default function PageFour() {
               <p className="socialTitle">Email</p>
               <p className="socialText">siuiux.2020@gmail.com</p>
             </a>
-            <a href="tel:+09392057344" className="phone">
+            <a href="tel:+989392057344" className="phone">
               <svg
                 width="6.94vw"
                 height="6.94vw"
@@ -141,9 +141,9 @@ export default function PageFour() {
                     width="99.209"
                     height="99.3333"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                   >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
