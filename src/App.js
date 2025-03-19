@@ -2,9 +2,9 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
-import Home from "./sources/Home";
-import Work from "./sources/Work";
-import Burger from "./sources/BurgerMenu";
+import Home from "./components/Home";
+import Work from "./components/Work";
+import Burger from "./components/BurgerMenu";
 import logo from "./asset/siuinx.svg";
 
 function Header({ scrollToSection, homeRef, workRef, aboutMeRef, contactRef, resume }) {
