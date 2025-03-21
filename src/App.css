@@ -93,6 +93,11 @@ header.unFinxed {
   height: 6vh;
 }
 
+.mobileHeaderOption {
+  background: none;
+  border: none;
+  backdrop-filter: none;
+}
 .headerOption {
   font-weight: 400;
   text-align: center;
@@ -146,6 +151,10 @@ header.unFinxed {
     background: #1e1e1e !important;
   }
   .mobileHeaderOption {
+    background: #fbfbfbc4;
+    border: 1px solid #d0d0d0;
+    backdrop-filter: blur(8px);
+
     width: 120px;
     height: 230px;
     border-radius: 8px;

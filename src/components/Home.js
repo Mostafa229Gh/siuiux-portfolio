@@ -122,6 +122,10 @@ function Home({ homeRef, workRef, cardRef, aboutMeRef, contactRef, resume }) {
         menu.style.background = "#26262680";
         menu.style.backdropFilter = "blur(8px)";
         menu.style.border = " 1px solid #767676";
+      } else {
+        menu.style.background = "none";
+        menu.style.backdropFilter = "none";
+        menu.style.border = "none";
       }
 
       if (webNameText && logo) {
@@ -138,6 +142,10 @@ function Home({ homeRef, workRef, cardRef, aboutMeRef, contactRef, resume }) {
         menu.style.background = "#fbfbfbc4";
         menu.style.backdropFilter = "blur(8px)";
         menu.style.border = " 1px solid #d0d0d0";
+      } else {
+        menu.style.background = "none";
+        menu.style.backdropFilter = "none";
+        menu.style.border = "none";
       }
 
       if (webNameText && logo) {
