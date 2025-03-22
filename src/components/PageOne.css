@@ -56,12 +56,12 @@ h1 {
 
 .expertise-wrapper {
   position: relative;
-  width: 55.56vw;
+  /* width: 55.56vw; */
   height: 6.04vw;
 }
 
 .expertise {
-  width: 800.01px;
+  width: 802.01px;
   height: 87px;
   position: absolute;
   padding: 0 0 1.2vw 0;
@@ -127,7 +127,7 @@ h1 {
     margin-bottom: 28px;
   }
   h1 {
-    font-size: 36px;
+    font-size: 35px;
     line-height: 49.03px;
   }
   #sinaDavir {
