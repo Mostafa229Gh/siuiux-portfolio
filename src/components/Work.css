@@ -158,8 +158,20 @@ main {
   gap: 2vw;
   margin: 45px 0px;
 }
-.imageSmallCard {
+.imageSectionImages {
   flex-grow: 0;
+  width: 18.33vw;
+  height: 23.15vh;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.pswp__img {
+  height: unset !important;
+  top: 65px !important;
+}
+.imageSmallCard {
+  /* flex-grow: 0; */
   width: 18.33vw;
   height: 23.15vh;
   background-size: cover;
@@ -403,6 +415,16 @@ main {
     gap: 3vw;
     margin: 20px 0px;
   }
+  .imageSectionImages {
+    width: 146px;
+    height: 104px;
+    border-radius: 8px;
+  }
+  .pswp__img {
+    height: unset !important;
+    top: 20px !important;
+  }
+
   .imageSmallCard {
     width: 146px;
     height: 104px;

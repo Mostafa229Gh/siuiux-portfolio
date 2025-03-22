@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { fetchProjects } from "./api";
 import Loading from "./Loading";
 import { useLocation } from "react-router-dom";
+import { Gallery, Item } from "react-photoswipe-gallery";
+import "photoswipe/dist/photoswipe.css";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -84,7 +86,7 @@ export default function Work() {
                     setSelectedProject(project);
                     scrollToTop();
                     setTimeout(() => {
-                      setIsProjectsButton(false)
+                      setIsProjectsButton(false);
                     }, 550);
                   }}
                   className={
@@ -207,13 +209,27 @@ export default function Work() {
           </div>
         </div>
         <div className="imageSectionProject">
-          {selectedProject.images.map((image, index) => (
-            <div
-              key={index}
-              className="imageSmallCard"
-              style={{ backgroundImage: `url(${image.image})` }}
-            ></div>
-          ))}
+          <Gallery>
+            {selectedProject.images.map((image, index) => (
+              <Item
+                key={index}
+                original={image.image}
+                thumbnail={image.image}
+                width="1024"
+                height="768"
+              >
+                {({ ref, open }) => (
+                  <img
+                    ref={ref}
+                    onClick={open}
+                    src={image.image}
+                    alt={`Project ${index + 1}`}
+                    className="imageSectionImages"
+                  />
+                )}
+              </Item>
+            ))}
+          </Gallery>
         </div>
         <div className="definitionSection">
           <h2>About</h2>
